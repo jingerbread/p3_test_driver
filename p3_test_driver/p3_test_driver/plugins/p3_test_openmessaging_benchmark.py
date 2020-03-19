@@ -365,7 +365,7 @@ class OpenMessagingBenchmarkSSHTest(BaseTest):
                 'cat /opt/benchmark/*' + test_uuid + '*.json',
                 print_output=False,
             )
-            rec['omb_results'] = json.load(StringIO(results_json.decode()))
+            rec['omb_results'] = json.load(StringIO(results_json))
         except Exception as e:
             logging.warn('Unable to collect logs: %s' % e)
             rec['error'] = True
