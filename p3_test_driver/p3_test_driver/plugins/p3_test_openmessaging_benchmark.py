@@ -270,7 +270,7 @@ class OpenMessagingBenchmarkSSHTest(BaseTest):
                 capture_output=True,
             ).stdout.decode()
             rec['terraform_show'] = json.load(StringIO(terraform_show_json))
-            logging.info('terraform_show=%s' % rec['terraform_show'])
+            #logging.debug('terraform_show=%s' % rec['terraform_show'])
 
             if rec.get('ssh_host', '') == '':
                 rec['ssh_host'] = subprocess.run(
@@ -357,6 +357,7 @@ class OpenMessagingBenchmarkSSHTest(BaseTest):
         rec['command_timed_out'] = (return_code == -1)
         rec['output'] = output
         rec['errors'] = errors
+        logging.info("cmd return_code=%s" % str(return_code))
 
         # Collect results to store in results.json
         try:
