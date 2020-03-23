@@ -167,6 +167,12 @@ Run Jupyter for Analysis of Results
         --name jupyter jupyter/scipy-notebook:1386e2046833
     docker logs jupyter
 
+.. parsed-literal::
+ # If you need to run on Windows copy data and results-analyzer folder to some dir
+ # Docker Desktop > Settings > Ensure you have shared the drive in settings
+ docker run --user root -d -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v dir_path:/home/jovyan/work --name jupyter jupyter/scipy-notebook:1386e2046833
+ docker logs jupyter
+
 Open Notebook results-analyzer/results-analyzer-pravega.ipynb and run all cells.
 
 
