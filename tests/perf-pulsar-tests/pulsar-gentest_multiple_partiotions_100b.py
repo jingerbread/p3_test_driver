@@ -74,7 +74,7 @@ for repeat in range(1):
                                                     'keyDistributor': 'NO_KEY',
                                                 }
                                                 t = dict(
-                                                    test='omb',
+                                                    test='openmessaging-benchmark',
                                                     max_test_attempts=1,
                                                     result_filename='data/results/json/%(test)s__'
                                                                     '%(messageSize)db-'
