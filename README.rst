@@ -128,7 +128,8 @@ Run p3_test_driver from WSL CentOS7
     # Important clone inside benchmark where you deployed Pulsar
     # driver_deploy_dir = '../driver-%s/deploy' % driver['name'].lower()
     cd /home/aws/fork-benchmark
-    git clone https://github.com/pravega/p3_test_driver
+    # todo: git clone https://github.com/pravega/p3_test_driver
+    git clone -b UDSPERF-464_run_pulsar_aws_test https://github.com/jingerbread/p3_test_driver.git
 
     # if use tesgen_pulsar_ssh.py change path to benchmark artifact
     # tarball = 'package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
@@ -157,7 +158,8 @@ Run p3_test_driver from WSL CentOS7
     source venv/bin/activate
     pip install p3_test_driver
 
-    tests/testgen_pulsar_ssh_simple.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml
+    # tests/testgen_pulsar_ssh_simple.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml
+     tests/perf-pulsar-tests/pulsar-gentest_multiple_partiotions_100b.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml
 
 Run Jupyter for Analysis of Results
 -----------------------------------

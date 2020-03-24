@@ -10,24 +10,24 @@ localWorker = False
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
-# Run 100b rate 50000 2 min test
+# Run 100b, 10kb rate 50000 2 min test with 1, 2, 8, 16 partitions
 for repeat in range(1):
     for producerWorkers in [2]:
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
-            for messageSize in [100]:
+            for messageSize in [100]:    #   , 10000]:
                 messageSize = int(messageSize)
                 eps = []
                 MBps = []
                 ppw = []
                 if messageSize <= 100:
-                    eps = [5e4] # producerRateEventsPerSec
-                    ppw = [1]  # producersPerWorker
+                    eps = [5e4]     # producerRateEventsPerSec
+                    ppw = [1]   # producersPerWorker
                 elif messageSize <= 10000:
-                    eps += [3e1, 1e2, 3e2, 1e3, 3e3, 1e4, 3e4, -1]
-                    ppw = [2]
+                    eps += [5e4]    # [3e1, 1e2, 3e2, 1e3, 3e3, 1e4, 3e4, -1]
+                    ppw = [1]   # [2]
                 else:
-                    eps += [1, 3, 10, 30, 50, 70, 90, -1]
+                    eps += [1]  # , 3, 10, 30, 50, 70, 90, -1]
                     ppw = [4]
                 eps += [x * 1e6 / messageSize for x in MBps]
                 for producerRateEventsPerSec in eps:
@@ -74,9 +74,14 @@ for repeat in range(1):
                                                     'keyDistributor': 'NO_KEY',
                                                 }
                                                 t = dict(
-                                                    test='openmessaging-benchmark',
+                                                    test='omb',
                                                     max_test_attempts=1,
-                                                    result_filename='data/results/json/%(test)s_%(test_uuid)s.json',
+                                                    result_filename='data/results/json/%(test)s__'
+                                                                    '%(messageSize)db-'
+                                                                    '%(partitionsPerTopic)dp-'
+                                                                    '%(producerRateEventsPerSec)dr-'
+                                                                    '%(testDurationMinutes)dmin'
+                                                                    '_%(test_uuid)s.json',
                                                     driver=driver,
                                                     workload=workload,
                                                     numWorkers=numWorkers,

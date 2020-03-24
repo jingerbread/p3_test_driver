@@ -297,7 +297,7 @@ class OpenMessagingBenchmarkSSHTest(BaseTest):
         self.inspect_environment()
 
         workload['name'] = test_uuid
-        driver_file_name = '/tmp/driver-' +test_uuid + '.yaml'
+        driver_file_name = '/tmp/driver-' + test_uuid + '.yaml'
         workload_file_name = '/tmp/workload-' + test_uuid + '.yaml'
         payload_file_name = '/tmp/payload-' + test_uuid + '.data'
         workload['payloadFile'] = payload_file_name
