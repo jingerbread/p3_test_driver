@@ -71,14 +71,59 @@ Create virtualenv
     # created virtual environment CPython3.7.7.final.0-64 in 11044ms
 
     source venv/bin/activate
-    pip install p3_test_driver
+    # pip --no-cache-dir -v install p3_test_driver
+    # will install latest package from https://pypi.org/simple/p3-test-driver/
+    pip -v --upgrade p3_test_driver
 
 Run test
 
 .. parsed-literal::
      tests/perf-pulsar-tests/pulsar-gentest_multiple_partiotions_100b.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml
 
+Uninstall p3_test_driver
+
+.. parsed-literal::
+pip uninstall p3_test_driver
+
 Exit the virtualenv
 
 .. parsed-literal::
      deactive
+
+**********************
+Developer Installation
+**********************
+
+Those that wish to modify P3 Test Driver should use the following steps to install
+an editable version and then upload to PyPI.
+
+.. parsed-literal::
+    pip -v uninstall p3_test_driver
+    #  -e, --editable <path/url>
+    # Install a project in editable mode
+    pip install -e p3_test_driver
+
+    # Twine is a utility for publishing Python packages on PyPI
+    pip install twine
+    cd p3_test_driver
+    # Generating distribution archives
+    python setup.py sdist bdist_wheel
+    # The tar.gz file is a source archive
+    # whereas the .whl file is a built distribution.
+    ls dist/
+    p3_test_driver-2.0.3-py3-none-any.whl  p3_test_driver-2.0.3.tar.gz
+    # Install new package from dist
+    cd ..
+    yes | pip -v uninstall p3_test_driver
+    pip -v install p3_test_driver/dist/p3_test_driver-2.0.3-py3-none-any.whl
+
+Upload your package to the Python Package Index
+.. parsed-literal::
+    twine upload dist/*
+
+.. parsed-literal::
+    pip install -e p3_data
+    pip install twine
+    cd p3_data
+    python setup.py sdist bdist_wheel
+    twine upload dist/*
