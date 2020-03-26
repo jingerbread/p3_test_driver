@@ -1,6 +1,6 @@
 ***********************************************
 Run p3_test_driver from WSL CentOS7 for Pulsar
-**********************************************
+***********************************************
 Pre-requirements:
 * Install python >= 3.7
 Check https://www.python.org/ftp/python/
