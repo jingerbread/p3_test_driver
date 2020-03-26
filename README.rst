@@ -158,8 +158,12 @@ Run p3_test_driver from WSL CentOS7
     source venv/bin/activate
     pip install p3_test_driver
 
-    # tests/testgen_pulsar_ssh_simple.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml
+    # Don't forget to set correct rights for new test:
+     chmod 655 tests/perf-pulsar-tests/pulsar-gentest_multiple_partiotions_100b.py
      tests/perf-pulsar-tests/pulsar-gentest_multiple_partiotions_100b.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml
+
+     # exit the env
+     deactive
 
 Run Jupyter for Analysis of Results
 -----------------------------------
