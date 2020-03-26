@@ -20,8 +20,9 @@ Check https://www.python.org/ftp/python/
     # Check
     python3.7 -V
 
-*  Install virtualenv
+Install virtualenv
 https://blog.teststation.org/centos/python/2016/05/11/installing-python-virtualenv-centos-7/
+
 .. parsed-literal::
     yum install epel-release
     yes | yum install python34 python-pip
@@ -30,18 +31,21 @@ https://blog.teststation.org/centos/python/2016/05/11/installing-python-virtuale
 
 Deploy Pulsar on AWS according instruction in open-messaging benchmark driver-pulsar/README.md
 Clone inside benchmark project
+
 .. parsed-literal::
     cd /home/aws/fork-benchmark
     # todo refer to original project if is PR merged:
     # git clone https://github.com/pravega/p3_test_driver
     git clone -b UDSPERF-464_run_pulsar_aws_test https://github.com/jingerbread/p3_test_driver.git
 
-Because project code refer to benchmark project driver-pulsar files:
+Because project code refer to benchmark project driver-pulsar files
+
 .. parsed-literal::
     # tesgen_pulsar_ssh.py path to benchmark artifact:
     tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 
 Check config/pulsar_ssh.config.yaml
+
 .. parsed-literal::
     status_html: data/status/pulsar.html
     test_driver_log_filename: data/logs/p3_test_driver.log
@@ -51,6 +55,7 @@ Check config/pulsar_ssh.config.yaml
     ansible: true # Requires ../driver-pulsar/deploy/vars.yaml
 
 Create ../driver-pulsar/deploy/vars.yaml
+
 .. parsed-literal::
     ---
     pulsarVersion: "2.4.1"
@@ -58,6 +63,7 @@ Create ../driver-pulsar/deploy/vars.yaml
     bookkeeperVersion: "4.9.2"
 
 Create virtualenv
+
 .. parsed-literal::
     cd p3_test_driver/
     rm -rf venv
@@ -68,9 +74,11 @@ Create virtualenv
     pip install p3_test_driver
 
 Run test
+
 .. parsed-literal::
      tests/perf-pulsar-tests/pulsar-gentest_multiple_partiotions_100b.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml
 
 Exit the virtualenv
+
 .. parsed-literal::
      deactive
