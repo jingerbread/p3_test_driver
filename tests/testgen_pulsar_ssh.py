@@ -7,7 +7,7 @@ import sys
 test_list = []
 
 localWorker = False
-tarball = 'package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
+tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
 for repeat in range(1):
