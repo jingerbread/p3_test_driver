@@ -72,7 +72,7 @@ Create virtualenv
 
     source venv/bin/activate
     # pip --no-cache-dir -v install p3_test_driver
-    # will install latest package from https://pypi.org/simple/p3-test-driver/
+    # Install latest package from https://pypi.org/simple/p3-test-driver/
     pip -v --upgrade p3_test_driver
 
 Run test
@@ -112,7 +112,7 @@ an editable version and then upload to PyPI.
     # whereas the .whl file is a built distribution.
     ls dist/
     p3_test_driver-2.0.3-py3-none-any.whl  p3_test_driver-2.0.3.tar.gz
-    # Install new package from dist
+    #  Uninstall previous and install new package from dist
     cd ..
     yes | pip -v uninstall p3_test_driver
     pip -v install p3_test_driver/dist/p3_test_driver-2.0.3-py3-none-any.whl
