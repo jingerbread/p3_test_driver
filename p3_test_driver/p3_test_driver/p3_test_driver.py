@@ -134,6 +134,7 @@ def main():
 
     if not options.tests:
         parser.error('required parameters not specified')
+    logging.info('options.tests %s' % options.tests)
 
     if not options.config:
         options.config = {}

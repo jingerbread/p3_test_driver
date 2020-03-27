@@ -30,5 +30,7 @@ pip -v install p3_test_driver/dist/p3_test_driver-2.0.3-py3-none-any.whl
 set +x
 echo -e "\e[36mUpdate finished successfully\e[0m"
 echo "Run test with f.e:"
-echo "tests/perf-pulsar-tests/pulsar-gentest_multiple_partiotions_100b.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml"
+# echo "tests/perf-pulsar-tests/pulsar-gentest_multiple_partiotions_100b.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml"
+# tests/perf-pulsar-tests/pulsar-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml
+echo "tests/perf-pulsar-tests/pulsar-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml"
 
