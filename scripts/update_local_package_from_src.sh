@@ -10,6 +10,9 @@ scriptName=${0##*/}
 
 echo -e "\025[25mSet debug mode and exit upon error\025[0m"
 set -ex
+
+git pull
+
 #  -e, --editable <path/url>
 # Install a project in editable mode
 pip install -e p3_test_driver
