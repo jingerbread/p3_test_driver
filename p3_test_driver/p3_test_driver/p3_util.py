@@ -58,8 +58,8 @@ def record_result(result, result_filename):
     filename_timestamp = now.strftime('%Y%m%d%H%M%S%f')
     var_dict = result.copy()
     #  todo: remove
-    logging.debug('record_result() result_filename %s' % result_filename)
-    logging.debug('record_result() var_dict %s' % var_dict)
+    logging.info('record_result() result_filename %s' % result_filename)
+    # logging.info('record_result() var_dict %s' % var_dict)
     var_dict['timestamp'] = filename_timestamp
     result_filename = result_filename % var_dict
     logging.info('Recording results to file %s' % result_filename)
