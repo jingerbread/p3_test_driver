@@ -77,11 +77,11 @@ for repeat in range(1):
                                                     test='openmessaging-benchmark',
                                                     max_test_attempts=1,
                                                     result_filename='data/results/json/%(test)s__'
-                                                                    '%(messageSize)db-'
-                                                                    '%(partitionsPerTopic)dp-'
-                                                                    '%(producerRateEventsPerSec)dr-'
-                                                                    '%(testDurationMinutes)dmin'
-                                                                    '_%(test_uuid)s.json',
+                                                                    '%(messageSize)d__b'
+                                                                    '%(partitionsPerTopic)d__p'
+                                                                    '%(producerRateEventsPerSec)d__rate'
+                                                                    '%(testDurationMinutes)d__min'
+                                                                    '%(test_uuid)s.json',
                                                     driver=driver,
                                                     workload=workload,
                                                     numWorkers=numWorkers,
