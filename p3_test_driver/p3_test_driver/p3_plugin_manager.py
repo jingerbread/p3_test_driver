@@ -60,7 +60,7 @@ def get_class_property(class_type, class_name, property_name, default=None):
     return value
 
 def get_class(class_type, class_name):
-    print('class_type=%s class_name=%s' %(class_type, class_name))  # todo remove
+    # print('class_type=%s class_name=%s' %(class_type, class_name))  # todo remove
     global _plugin_toc
     k = _get_item_key(class_type, class_name)
     return _plugin_toc[k]['class']

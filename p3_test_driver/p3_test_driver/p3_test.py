@@ -38,7 +38,7 @@ class BaseTest(object):
     def record_result(self):
         config = self.test_config
         # todo: remove
-        logging.info('record_result config[result_filename]: %s' % config['result_filename'])
+        # logging.info('record_result config[result_filename]: %s' % config['result_filename'])
         if 'result_filename' in config:
             record_result(config, config['result_filename'])
 
