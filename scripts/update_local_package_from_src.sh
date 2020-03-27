@@ -8,7 +8,7 @@
 # ./scripts/update_local_package_from_src.sh
 scriptName=${0##*/}
 
-echo -e "\025[25mSet debug mode and exit upon error\025[0m"
+echo -e "\e[32mSet debug mode and exit upon error\e[0m"
 set -ex
 
 git pull
@@ -27,7 +27,7 @@ ls -l dist/
 cd .. && yes | pip -v uninstall p3_test_driver
 pip -v install p3_test_driver/dist/p3_test_driver-2.0.3-py3-none-any.whl
 
-echo -e "\066[66m Update finished successfully\066[0m"
+echo -e "\e[36mUpdate finished successfully\e[0m"
 echo "Run test with f.e:"
 echo "tests/perf-pulsar-tests/pulsar-gentest_multiple_partiotions_100b.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml"
 
