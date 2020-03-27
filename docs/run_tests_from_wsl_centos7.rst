@@ -98,23 +98,23 @@ Those that wish to modify P3 Test Driver should use the following steps to insta
 an editable version and then upload to PyPI.
 
 .. parsed-literal::
-    pip -v uninstall p3_test_driver
+    yes | pip -v uninstall p3_test_driver
     #  -e, --editable <path/url>
     # Install a project in editable mode
     pip install -e p3_test_driver
 
     # Twine is a utility for publishing Python packages on PyPI
     pip install twine
-    cd p3_test_driver
+
     # Generating distribution archives
-    python setup.py sdist bdist_wheel
+    cd p3_test_driver && python setup.py sdist bdist_wheel
     # The tar.gz file is a source archive
     # whereas the .whl file is a built distribution.
     ls dist/
     p3_test_driver-2.0.3-py3-none-any.whl  p3_test_driver-2.0.3.tar.gz
+
     #  Uninstall previous and install new package from dist
-    cd ..
-    yes | pip -v uninstall p3_test_driver
+    cd .. && yes | pip -v uninstall p3_test_driver
     pip -v install p3_test_driver/dist/p3_test_driver-2.0.3-py3-none-any.whl
 
 Upload your package to the Python Package Index
