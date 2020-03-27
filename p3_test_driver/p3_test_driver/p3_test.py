@@ -32,11 +32,13 @@ class BaseTest(object):
         default_config.update(default_configs.get('all',{}))
         default_config.update(default_configs.get(test,{}))
         default_config = dict([(k,v) for k,v in default_config.items() if k not in self.test_config])
-        #logging.debug('BaseTest.__init__: default_config=%s' % default_config)
+        #   logging.debug('BaseTest.__init__: default_config=%s' % default_config)
         self.test_config.update(default_config)
 
     def record_result(self):
         config = self.test_config
+        # todo: remove
+        logging.debug('record_result config[result_filename]: %s' % config['result_filename'])
         if 'result_filename' in config:
             record_result(config, config['result_filename'])
 
