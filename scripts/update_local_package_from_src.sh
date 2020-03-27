@@ -4,8 +4,8 @@
 # Script to build/install local p3_driver_package from src
 # (checked only for WSL CentOS7)
 
-# Run script from p3_test_driver root dir:
-# ./scripts/update_local_package_from_src.sh
+# Run script from p3_test_driver root dir: (~ 1min)
+# time ./scripts/update_local_package_from_src.sh
 scriptName=${0##*/}
 
 echo -e "\e[32mSet debug mode and exit upon error\e[0m"
@@ -29,8 +29,8 @@ pip -v install p3_test_driver/dist/p3_test_driver-2.0.3-py3-none-any.whl
 
 set +x
 echo -e "\e[36mUpdate finished successfully\e[0m"
-echo "Run test with f.e:"
-# echo "tests/perf-pulsar-tests/pulsar-gentest_multiple_partiotions_100b.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml"
-# tests/perf-pulsar-tests/pulsar-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml
-echo "tests/perf-pulsar-tests/pulsar-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml"
+echo "\e[36mRun test with f.e:\e[0m"
+echo -e "\e[36tests/testgen_pulsar_ssh.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m"
+echo -e "\e[36tests/perf-pulsar-tests/pulsar-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m"
+echo- e "\e[36tests/perf-pulsar-tests/pulsar-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m"
 
