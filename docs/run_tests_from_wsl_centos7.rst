@@ -83,7 +83,7 @@ Run test
 Uninstall p3_test_driver
 
 .. parsed-literal::
-pip uninstall p3_test_driver
+    pip uninstall p3_test_driver
 
 Exit the virtualenv
 
@@ -93,6 +93,8 @@ Exit the virtualenv
 **********************
 Developer Installation
 **********************
+
+Use `script to build/install local p3_driver_package from src <https://github.com/jingerbread/p3_test_driver/blob/UDSPERF-464_run_pulsar_aws_test/scripts/update_local_package_from_src.sh>`__ before running tests
 
 Those that wish to modify P3 Test Driver should use the following steps to install
 an editable version and then upload to PyPI.
