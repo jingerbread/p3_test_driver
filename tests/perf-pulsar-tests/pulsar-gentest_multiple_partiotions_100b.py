@@ -76,12 +76,9 @@ for repeat in range(1):
                                                 t = dict(
                                                     test='openmessaging-benchmark',
                                                     max_test_attempts=1,
-                                                    result_filename='data/results/json/%(test)s__'
-                                                                    '%(messageSize)d__b'
-                                                                    '%(partitionsPerTopic)d__p'
-                                                                    '%(producerRateEventsPerSec)d__rate'
-                                                                    '%(testDurationMinutes)d__min'
-                                                                    '%(test_uuid)s.json',
+                                                    # result_filename_long='data/results/json/%(test)s__%(messageSize)d__%(partitionsPerTopic)d__%(producerRateEventsPerSec)__%(testDurationMinutes)d__%(test_uuid)s.json',
+                                                    # result_filename_long='data/results/json/%(test)s__%(messageSize)d__%(test_uuid)s.json',
+                                                    result_filename='data/results/json/%(test)s_%(test_uuid)s.json',
                                                     driver=driver,
                                                     workload=workload,
                                                     numWorkers=numWorkers,
