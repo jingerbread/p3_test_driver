@@ -15,7 +15,7 @@ for repeat in range(1):
     for producerWorkers in [2]:
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
-            for messageSize in [100]:    #   , 10000]:
+            for messageSize in [100, 10000]:
                 messageSize = int(messageSize)
                 eps = []
                 MBps = []
@@ -34,7 +34,7 @@ for repeat in range(1):
                     for topics in [1]:
                         for partitionsPerTopic in [1, 2, 8, 16]:
                             for producersPerWorker in ppw:
-                                producersPerTopic = 1  # int(producersPerWorker * producerWorkers)
+                                producersPerTopic = 4  # int(producersPerWorker * producerWorkers)
                                 for consumerBacklogSizeGB in [0]:
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
