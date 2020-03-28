@@ -5,7 +5,7 @@ import json
 import sys
 
 test_list = []
-
+# Generates 21 test and takes ~90 min
 localWorker = False
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
@@ -20,8 +20,8 @@ for repeat in range(1):
                 MBps = []
                 ppw = []
                 if messageSize <= 100:
-                    eps = [3e1, 1e2, 3e2, 1e3, 3e3, 1e4, 3e4, 5e4, 1e5, 3e5, 1e6, 3e6, -1]
-                    ppw = [2]
+                    eps = [3e1, 1e2, 3e2, 1e3, 3e3, 1e4, 3e4, 5e4, 1e5, 3e5, 1e6, 3e6, -1]  # producerRateEventsPerSec
+                    ppw = [2]   # producersPerWorker
                 elif messageSize <= 10000:
                     eps += [3e1, 1e2, 3e2, 1e3, 3e3, 1e4, 3e4, -1]
                     ppw = [2]

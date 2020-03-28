@@ -129,3 +129,22 @@ Upload your package to the Python Package Index
     cd p3_data
     python setup.py sdist bdist_wheel
     twine upload dist/*
+
+.. parsed-literal::
+    grep -A14 "Benchmark - Workloads" data/logs/p3_test_driver.log  > data/workloads.json
+    --
+    2020-03-27 18:02:09,968 [MainThread  ] [INFO ] 18:02:11.930 [main] INFO io.openmessaging.benchmark.Benchmark - Workloads: {
+    2020-03-27 18:02:09,969 [MainThread  ] [INFO ]   "workload-4fb9b75b-384c-4849-b2f1-1107041e8449" : {
+    2020-03-27 18:02:09,970 [MainThread  ] [INFO ]     "name" : "4fb9b75b-384c-4849-b2f1-1107041e8449",
+    2020-03-27 18:02:09,971 [MainThread  ] [INFO ]     "topics" : 1,
+    2020-03-27 18:02:09,972 [MainThread  ] [INFO ]     "partitionsPerTopic" : 16,
+    2020-03-27 18:02:09,973 [MainThread  ] [INFO ]     "keyDistributor" : "NO_KEY",
+    2020-03-27 18:02:09,974 [MainThread  ] [INFO ]     "messageSize" : 10000,
+    2020-03-27 18:02:09,974 [MainThread  ] [INFO ]     "payloadFile" : "/tmp/payload-4fb9b75b-384c-4849-b2f1-1107041e8449.data",
+    2020-03-27 18:02:09,974 [MainThread  ] [INFO ]     "subscriptionsPerTopic" : 1,
+    2020-03-27 18:02:09,975 [MainThread  ] [INFO ]     "producersPerTopic" : 4,
+    2020-03-27 18:02:09,975 [MainThread  ] [INFO ]     "consumerPerSubscription" : 16,
+    2020-03-27 18:02:09,976 [MainThread  ] [INFO ]     "producerRate" : -1,
+    2020-03-27 18:02:09,976 [MainThread  ] [INFO ]     "consumerBacklogSizeGB" : 0,
+    2020-03-27 18:02:09,976 [MainThread  ] [INFO ]     "testDurationMinutes" : 5
+    2020-03-27 18:02:09,977 [MainThread  ] [INFO ]   }
