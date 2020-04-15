@@ -46,6 +46,7 @@ for repeat in range(1):
                                                         'ioThreads': 8,
                                                         'connectionsPerBroker': 8,
                                                         'clusterName': 'local',
+                                                        'scopeName': 'p3testdriver',
                                                         'namespacePrefix': 'benchmark/ns',
                                                         'topicType': 'persistent',
                                                         'persistence': {'ensembleSize': 3,
