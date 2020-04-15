@@ -148,3 +148,36 @@ Upload your package to the Python Package Index
     2020-03-27 18:02:09,976 [MainThread  ] [INFO ]     "consumerBacklogSizeGB" : 0,
     2020-03-27 18:02:09,976 [MainThread  ] [INFO ]     "testDurationMinutes" : 5
     2020-03-27 18:02:09,977 [MainThread  ] [INFO ]   }
+
+
+Run Jupyter for Analysis of Results
+-----------------------------------
+
+.. parsed-literal::
+    docker run -d -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v "$PWD":/home/jovyan/work \
+        --name jupyter jupyter/scipy-notebook:1386e2046833
+    docker logs jupyter
+
+.. parsed-literal::
+ # If you need to run on Windows:
+ # C:\someFolder:
+    - data (folder with experiment results)
+    - fork-p3_test_driver (p3_test_driver project)
+ # Docker Desktop > Settings > Ensure you have shared the drive in settings
+ # Run from administrator console:
+ docker run --user root -d -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v  C:\someFolder:/home/jovyan/work --name jupyter jupyter/scipy-notebook:1386e2046833
+ # containerId
+ docker logs jupyter
+ # To access the notebook, open this file in a browser:
+ #       file:///home/jovyan/.local/share/jupyter/runtime/nbserver-17-open.html
+ #   Or copy and paste one of these URLs:
+ #       http://2dfb7f3d53a5:8888/?token=3d0297ad7e8dac33438a8ef0e2195170826b28bdbaf38fa5
+ #   or http://127.0.0.1:8888/?token=3d0297ad7e8dac33438a8ef0e2195170826b28bdbaf38fa5
+
+Open Notebook results-analyzer/results-analyzer-pravega.ipynb and run all cells.
+
+ Before running new jupyter container stop and remove previous:
+.. parsed-literal::
+ docker ps
+ docker stop containerId
+ docker rm containerId
