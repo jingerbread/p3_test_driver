@@ -41,7 +41,7 @@ for repeat in range(1):
                                             for ackQuorum in [2]:   # 2 causes OOM in Bookie at max rate
                                                 driver = {
                                                     'name': 'Pravega',
-                                                    'driverClass': 'io.openmessaging.benchmark.driver.pulsar.PravegaBenchmarkDriver',
+                                                    'driverClass': 'io.openmessaging.benchmark.driver.pravega.PravegaBenchmarkDriver',
                                                     'client': {
                                                         'ioThreads': 8,
                                                         'connectionsPerBroker': 8,
