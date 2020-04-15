@@ -56,7 +56,7 @@ build = False
 for repeat in range(1):
     for producerWorkers in [2]:
         numWorkers = 0 if localWorker else producerWorkers*2
-        for testDurationMinutes in [15]:
+        for testDurationMinutes in [1]:
             for messageSize in [100]:
                 for producerRateEventsPerSec in [3e1, 1e2, 3e2, 1e3, 3e3, 1e4, 3e4, 1e5, 3e5, -1]:
                     for topics in [1]:
@@ -73,7 +73,7 @@ for repeat in range(1):
 for repeat in range(1):
     for producerWorkers in [2]:
         numWorkers = 0 if localWorker else producerWorkers*2
-        for testDurationMinutes in [15]:
+        for testDurationMinutes in [1]:
             for messageSize in [10000]:
                 for producerRateEventsPerSec in [3e1, 1e2, 3e2, 1e3, 3e3, 1e4, -1]:
                     for topics in [1]:
@@ -90,7 +90,7 @@ for repeat in range(1):
 for repeat in range(1):
     for producerWorkers in [2]:
         numWorkers = 0 if localWorker else producerWorkers*2
-        for testDurationMinutes in [15]:
+        for testDurationMinutes in [1]:
             for messageSize in [1000*1000]:
                 for producerRateEventsPerSec in [1e0, 3e0, 1e1, 3e1, 1e2, 3e2, -1]:
                     for topics in [1]:
@@ -107,7 +107,7 @@ for repeat in range(1):
 for repeat in range(1):
     for producerWorkers in [2]:
         numWorkers = 0 if localWorker else producerWorkers*2
-        for testDurationMinutes in [15]:
+        for testDurationMinutes in [1]:
             for messageSize in [100]:
                 for producerRateEventsPerSec in [5e4]:
                     for topics in [1]:

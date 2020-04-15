@@ -17,7 +17,7 @@ build = True
 for repeat in range(1):
     for producerWorkers in [1]:
         numWorkers = 0 if localWorker else producerWorkers*2
-        for testDurationMinutes in [1]:# todo: return 15 min
+        for testDurationMinutes in [15]:
             for messageSize in [1000000]:
                 messageSize = int(messageSize)
                 eps = []
