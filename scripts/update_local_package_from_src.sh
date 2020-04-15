@@ -11,8 +11,8 @@ echo -e "\e[36m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 echo -e "\e[36mRunning script ${0##*/} at $(date)\e[0m"
 echo -e "\e[36m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\e[0m"
 
-echo -e "\e[32mSet debug mode and exit upon error\e[0m"
-set -ex
+echo -e "\e[32mSet exit upon error\e[0m"
+set -e
 
 git pull
 
