@@ -32,7 +32,7 @@ pip -v install p3_test_driver/dist/p3_test_driver-2.0.3-py3-none-any.whl
 
 set +x
 echo -e "\e[36mSetup finished successfully at $(date)\e[0m"
-echo "\e[36mRun test with f.e:\e[0m"
+echo -e "\e[36mRun test with f.e:\e[0m"
 echo -e "\e[35m----Pravega tests:----\e[0m"
 echo -e "\e[36mtests/testgen_pravega_ssh.py -vv | p3_test_driver -t - -c config/pravega_ssh.config.yaml\e[0m"
 echo -e "\e[36mtests/perf-pravega-tests/pravega-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pravega_ssh.config.yaml\e[0m"
