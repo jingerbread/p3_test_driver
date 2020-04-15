@@ -28,7 +28,8 @@ ls -l dist/
 
 #  Uninstall previous and install new package from dist
 cd .. && yes | pip -v uninstall p3_test_driver
-pip -v install p3_test_driver/dist/p3_test_driver-2.0.3-py3-none-any.whl
+# Add -v for verbose
+pip  install p3_test_driver/dist/p3_test_driver-2.0.3-py3-none-any.whl
 
 set +x
 echo -e "\e[36mSetup finished successfully at $(date)\e[0m"
