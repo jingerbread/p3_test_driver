@@ -6,7 +6,10 @@
 
 # Run script from p3_test_driver root dir: (~ 1min)
 # time ./scripts/update_local_package_from_src.sh
-scriptName=${0##*/}
+
+echo -e "\e[36m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\e[0m"
+echo -e "\e[36mRunning script ${0##*/} at $(date)\e[0m"
+echo -e "\e[36m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\e[0m"
 
 echo -e "\e[32mSet debug mode and exit upon error\e[0m"
 set -ex
