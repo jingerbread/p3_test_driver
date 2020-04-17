@@ -21,7 +21,7 @@ Before running tests, run following command,
 it will automate Developer installation of p3_test_driver.
 
 .. parsed-literal::
-   time update_local_package_from_src.sh
+   time ./scripts/update_local_package_from_src.sh
 
 ***********************************************
 Run p3_test_driver from WSL CentOS7 for Pulsar
