@@ -38,6 +38,8 @@ yum -y install epel-release
 yum -y install python34 python-pip
 pip install -U pip
 pip install -U virtualenv
+# Make sure you have the latest versions of setuptools and wheel installed:
+python3.7 -m pip install --user --upgrade setuptools wheel
 # Deploy Pulsar on AWS according instruction in open-messaging benchmark driver-pulsar/README.md
 # Clone p3_test_driver project inside benchmark project
 # tesgen_pulsar_ssh.py path to benchmark artifact:

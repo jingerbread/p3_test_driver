@@ -133,6 +133,9 @@ an editable version and then upload to PyPI.
     # Twine is a utility for publishing Python packages on PyPI
     pip install twine
 
+    # Make sure you have the latest versions of setuptools and wheel installed:
+    python3.7 -m pip install --user --upgrade setuptools wheel
+
     # Generating distribution archives
     cd p3_test_driver && python setup.py sdist bdist_wheel
     # The tar.gz file is a source archive
