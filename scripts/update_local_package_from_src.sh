@@ -21,7 +21,7 @@ git pull
 pip install -e p3_test_driver
 
 # Generating distribution archives
-cd p3_test_driver && python setup.py sdist bdist_wheel
+cd p3_test_driver && python3.7 setup.py sdist bdist_wheel
 # The tar.gz file is a source archive
 # whereas the .whl file is a built distribution.
 ls -l dist/
