@@ -1,4 +1,20 @@
 ***********************************************
+Setup p3_test_driver on jump-host (rhel7.4)
+***********************************************
+ Deploy Pulsar on AWS according instruction in open-messaging benchmark driver-pulsar/README.md
+ Clone p3_test_driver project inside benchmark project
+ tesgen_pulsar_ssh.py path to benchmark artifact:
+ tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
+
+.. parsed-literal::
+    cd /home/aws/fork-benchmark
+    # Todo: refer to original project if is PR merged:
+    # git clone https://github.com/pravega/p3_test_driver
+    git clone -b UDSPERF-464_run_pulsar_aws_test https://github.com/jingerbread/p3_test_driver.git fork_p3_test_driver
+    cd /home/aws/fork-benchmark/fork_p3_test_driver/
+    time ./scripts/setup_p3_test_driver_on_jumphost.sh
+
+***********************************************
 Run p3_test_driver from WSL CentOS7 for Pulsar
 ***********************************************
 Pre-requirements:
