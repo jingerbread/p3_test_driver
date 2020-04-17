@@ -13,7 +13,7 @@ build = False
 for repeat in range(1):
     for producerWorkers in [2]:
         numWorkers = 0 if localWorker else producerWorkers*2
-        for testDurationMinutes in [5]:
+        for testDurationMinutes in [1]:#[5]:
             for messageSize in [100, 10000]:
                 messageSize = int(messageSize)
                 eps = []
