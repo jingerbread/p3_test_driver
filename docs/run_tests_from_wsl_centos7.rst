@@ -14,6 +14,15 @@ Setup p3_test_driver on jump-host (rhel7.4)
     cd /home/aws/fork-benchmark/fork_p3_test_driver/
     time ./scripts/setup_p3_test_driver_on_jumphost.sh
 
+********************************************
+Developer Installation
+********************************************
+Before running tests, run following command,
+it will automate Developer installation of p3_test_driver.
+
+.. parsed-literal::
+   time update_local_package_from_src.sh
+
 ***********************************************
 Run p3_test_driver from WSL CentOS7 for Pulsar
 ***********************************************
