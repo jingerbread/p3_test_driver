@@ -33,7 +33,7 @@ for repeat in range(1):
                     for topics in [1]:
                         for partitionsPerTopic in [16]:
                             for producersPerWorker in ppw:
-                                producersPerTopic = 4   # todo: return int(producersPerWorker * producerWorkers)
+                                producersPerTopic = int(producersPerWorker * producerWorkers)
                                 for consumerBacklogSizeGB in [0]:
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
