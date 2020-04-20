@@ -35,11 +35,13 @@ set +x
 echo -e "\e[36mSetup finished successfully at $(date)\e[0m"
 echo -e "\e[36mRun test with screen f.e: screen -S session_name \e[0m"
 echo -e "\e[35m----Pravega tests:----\e[0m"
-echo -e "\e[36mscreen -S p3pravega time tests/testgen_pravega_ssh.py -vv | p3_test_driver -t - -c config/pravega_ssh.config.yaml\e[0m"
-echo -e "\e[36mscreen -S p3pravega time tests/perf-pravega-tests/pravega-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pravega_ssh.config.yaml\e[0m"
+echo -e "\e[35mscreen -S p3pravega \e[0m"
+echo -e "\e[36mtime tests/testgen_pravega_ssh.py -vv | p3_test_driver -t - -c config/pravega_ssh.config.yaml\e[0m"
+echo -e "\e[36mtime tests/perf-pravega-tests/pravega-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pravega_ssh.config.yaml\e[0m"
 
 echo -e "\e[35m----Pulsar tests:----\e[0m"
-echo -e "\e[36mscreen -S p3pulsar time tests/perf-pulsar-tests/testgen_pulsar_ssh.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m" # Takes ~45 min (1min test)
-echo -e "\e[36mscreen -S p3pulsar time tests/testgen_pulsar_ssh.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m" # Takes ~90 min (if 2min test)
-echo -e "\e[36mscreen -S p3pulsar time tests/perf-pulsar-tests/pulsar-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m"
-echo -e "\e[36mscreen -S p3pulsar time tests/perf-pulsar-tests/pulsar-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m"
+echo -e "\e[35mscreen -S p3pulsar\e[0m"
+echo -e "\e[36mtime tests/perf-pulsar-tests/testgen_pulsar_ssh.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m" # Takes ~45 min (1min test)
+echo -e "\e[36mtime tests/testgen_pulsar_ssh.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m" # Takes ~90 min (if 2min test)
+echo -e "\e[36mtime tests/perf-pulsar-tests/pulsar-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m"
+echo -e "\e[36mtime tests/perf-pulsar-tests/pulsar-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m"
