@@ -51,8 +51,8 @@ https://blog.teststation.org/centos/python/2016/05/11/installing-python-virtuale
 .. parsed-literal::
     yum install epel-release
     yes | yum install python34 python-pip
-    pip install -U pip
-    pip install -U virtualenv
+    pip3.7 install -U pip
+    pip3.7 install -U virtualenv
 
 Deploy Pulsar on AWS according instruction in open-messaging benchmark driver-pulsar/README.md
 Clone inside benchmark project
@@ -96,9 +96,9 @@ Create virtualenv
     # created virtual environment CPython3.7.7.final.0-64 in 11044ms
 
     source venv/bin/activate
-    # pip --no-cache-dir -v install p3_test_driver
+    # pip3.7 --no-cache-dir -v install p3_test_driver
     # Install latest package from https://pypi.org/simple/p3-test-driver/
-    pip -v --upgrade p3_test_driver
+    pip3.7 -v --upgrade p3_test_driver
 
 Run test
 
@@ -108,7 +108,7 @@ Run test
 Uninstall p3_test_driver
 
 .. parsed-literal::
-    pip uninstall p3_test_driver
+    pip3.7 uninstall p3_test_driver
 
 Exit the virtualenv
 
@@ -125,16 +125,18 @@ Those that wish to modify P3 Test Driver should use the following steps to insta
 an editable version and then upload to PyPI.
 
 .. parsed-literal::
-    yes | pip -v uninstall p3_test_driver
+    # from project root:
+    cd p3_test_driver
+    yes | pip3.7 -v uninstall p3_test_driver
     #  -e, --editable <path/url>
     # Install a project in editable mode
-    pip install -e p3_test_driver
+    pip3.7 install -e p3_test_driver
 
     # Twine is a utility for publishing Python packages on PyPI
-    pip install twine
+    pip3.7 install twine
 
     # Make sure you have the latest versions of setuptools and wheel installed:
-    python3.7 -m pip install --user --upgrade setuptools wheel
+    python3.7 -m pip3.7 install --user --upgrade setuptools wheel
 
     # Generating distribution archives
     cd p3_test_driver && python setup.py sdist bdist_wheel
@@ -144,16 +146,16 @@ an editable version and then upload to PyPI.
     p3_test_driver-2.0.3-py3-none-any.whl  p3_test_driver-2.0.3.tar.gz
 
     #  Uninstall previous and install new package from dist
-    cd .. && yes | pip -v uninstall p3_test_driver
-    pip -v install p3_test_driver/dist/p3_test_driver-2.0.3-py3-none-any.whl
+    cd .. && yes | pip3.7 -v uninstall p3_test_driver
+    pip3.7 -v install p3_test_driver/dist/p3_test_driver-2.0.3-py3-none-any.whl
 
 Upload your package to the Python Package Index
 .. parsed-literal::
     twine upload dist/*
 
 .. parsed-literal::
-    pip install -e p3_data
-    pip install twine
+    pip3.7 install -e p3_data
+    pip3.7 install twine
     cd p3_data
     python setup.py sdist bdist_wheel
     twine upload dist/*

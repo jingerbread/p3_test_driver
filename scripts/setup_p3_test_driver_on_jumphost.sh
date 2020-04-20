@@ -36,10 +36,10 @@ python3.7 -V
 # Install virtualenv https://blog.teststation.org/centos/python/2016/05/11/installing-python-virtualenv-centos-7/
 yum -y install epel-release
 yum -y install python34 python-pip
-pip install -U pip
-pip install -U virtualenv
+pip3.7 install -U pip
+pip3.7 install -U virtualenv
 # Make sure you have the latest versions of setuptools and wheel installed:
-python3.7 -m pip install --user --upgrade setuptools wheel
+python3.7 -m pip3.7 install --user --upgrade setuptools wheel
 # Deploy Pulsar on AWS according instruction in open-messaging benchmark driver-pulsar/README.md
 # Clone p3_test_driver project inside benchmark project
 # tesgen_pulsar_ssh.py path to benchmark artifact:
@@ -90,15 +90,15 @@ virtualenv -p python3.7 venv
 source venv/bin/activate
 
 # Developer installation
-yes | pip -v  uninstall p3_test_driver
+yes | pip3.7 -v  uninstall p3_test_driver
 #  -e, --editable <path/url>
 # Install a project in editable mode
 cd ..
 pwd
 # /home/aws/fork-benchmark/fork_p3_test_driver
-pip install -e p3_test_driver
+pip3.7 install -e p3_test_driver
 # Twine is a utility for publishing Python packages on PyPI
-yes | pip -q install twine
+yes | pip3.7 -q install twine
 
 # Generating distribution archives
 cd p3_test_driver && python setup.py sdist bdist_wheel
@@ -108,8 +108,8 @@ ls dist/
 # p3_test_driver-2.0.3-py3-none-any.whl  p3_test_driver-2.0.3.tar.gz
 
 #  Uninstall previous and install new package from dist
-cd .. && yes | pip -v uninstall p3_test_driver
-pip  install p3_test_driver/dist/p3_test_driver-2.0.3-py3-none-any.whl
+cd .. && yes | pip3.7 -v uninstall p3_test_driver
+pip3.7  install p3_test_driver/dist/p3_test_driver-2.0.3-py3-none-any.whl
 
 echo -e "\e[36mSetup finished successfully at $(date)\e[0m"
 echo "\e[36mRun test with f.e:\e[0m"

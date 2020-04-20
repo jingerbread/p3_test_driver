@@ -18,7 +18,7 @@ git pull
 
 #  -e, --editable <path/url>
 # Install a project in editable mode
-pip install -e p3_test_driver
+pip3.7 install -e p3_test_driver
 
 # Generating distribution archives
 cd p3_test_driver && python3.7 setup.py sdist bdist_wheel
@@ -27,9 +27,9 @@ cd p3_test_driver && python3.7 setup.py sdist bdist_wheel
 ls -l dist/
 
 #  Uninstall previous and install new package from dist
-cd .. && yes | pip -v uninstall p3_test_driver
+cd .. && yes | pip3.7 -v uninstall p3_test_driver
 # Add -v for verbose
-pip  install p3_test_driver/dist/p3_test_driver-2.0.3-py3-none-any.whl
+pip3.7  install p3_test_driver/dist/p3_test_driver-2.0.3-py3-none-any.whl
 
 set +x
 echo -e "\e[36mSetup finished successfully at $(date)\e[0m"
