@@ -54,15 +54,15 @@ build = False
 
 # Message size 100 B
 for repeat in range(1):
-    for producerWorkers in [2]:
+    for producerWorkers in [1]:
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [1]:
             for messageSize in [100]:
-                for producerRateEventsPerSec in [3e1, 1e2, 3e2, 1e3, 3e3, 1e4, 3e4, 1e5, 3e5, -1]:
+                for producerRateEventsPerSec in [3e1, 1e2, 3e2, 1e3, 3e3, 1e4, 3e4, 8e4, 1e5, 3e5, -1]:
                     for topics in [1]:
                         for partitionsPerTopic in [1]:
                             for producersPerWorker in [1]:
-                                producersPerTopic = int(producersPerWorker * producerWorkers)
+                                producersPerTopic = 1 # int(producersPerWorker * producerWorkers)
                                 for consumerBacklogSizeGB in [0]:
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
@@ -71,15 +71,15 @@ for repeat in range(1):
 
 # Message size 10 KB
 for repeat in range(1):
-    for producerWorkers in [2]:
+    for producerWorkers in [1]:
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [1]:
             for messageSize in [10000]:
-                for producerRateEventsPerSec in [3e1, 1e2, 3e2, 1e3, 3e3, 1e4, -1]:
+                for producerRateEventsPerSec in [3e1, 1e2, 3e2, 1e3, 3e3, 1e4, 8e4, 3e5, -1]:
                     for topics in [1]:
-                        for partitionsPerTopic in [16]:
+                        for partitionsPerTopic in [1]:
                             for producersPerWorker in [2]:
-                                producersPerTopic = int(producersPerWorker * producerWorkers)
+                                producersPerTopic = 1 # int(producersPerWorker * producerWorkers)
                                 for consumerBacklogSizeGB in [0]:
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
@@ -88,15 +88,15 @@ for repeat in range(1):
 
 # Message size 100 B, 50,000 events/sec
 for repeat in range(1):
-    for producerWorkers in [2]:
+    for producerWorkers in [1]:
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [1]:
             for messageSize in [100]:
                 for producerRateEventsPerSec in [5e4]:
                     for topics in [1]:
                         for partitionsPerTopic in [1]:
-                            for producersPerWorker in [1]:
-                                producersPerTopic = int(producersPerWorker * producerWorkers)
+                            for producersPerWorker in [2]:
+                                producersPerTopic = 1 #int(producersPerWorker * producerWorkers)
                                 for consumerBacklogSizeGB in [0]:
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
