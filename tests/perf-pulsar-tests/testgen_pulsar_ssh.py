@@ -5,7 +5,7 @@ import json
 import sys
 
 test_list = []
-# Generates 21 test and takes ~46 min (duration: 1min)
+# Generates 12 test and takes 25 min (duration: 1min)
 # batchingEnabled: True
 localWorker = False
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'

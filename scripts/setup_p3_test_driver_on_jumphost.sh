@@ -100,8 +100,10 @@ pip3.7 install -e p3_test_driver
 # Twine is a utility for publishing Python packages on PyPI
 yes | pip3.7 -q install twine
 
+yes | pip3.7 -q install wheel
+
 # Generating distribution archives
-cd p3_test_driver && python setup.py sdist bdist_wheel
+cd p3_test_driver && python3.7 setup.py sdist bdist_wheel
 # The tar.gz file is a source archive
 # whereas the .whl file is a built distribution.
 ls dist/
