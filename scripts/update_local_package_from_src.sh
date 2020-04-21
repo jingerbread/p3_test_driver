@@ -36,7 +36,7 @@ echo -e "\e[36mSetup finished successfully at $(date)\e[0m"
 echo -e "\e[36mRun test with screen f.e: screen -S session_name \e[0m"
 echo -e "\e[35m----Pravega tests:----\e[0m"
 echo -e "\e[35mscreen -S p3pravega \e[0m"
-echo -e "\e[36mtime tests/testgen_pravega_ssh.py -vv | p3_test_driver -t - -c config/pravega_ssh.config.yaml\e[0m"
+echo -e "\e[36mtime tests/perf-pravega-tests/testgen_pravega_ssh.py -vv | p3_test_driver -t - -c config/pravega_ssh.config.yaml\e[0m"
 echo -e "\e[36mtime tests/perf-pravega-tests/pravega-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pravega_ssh.config.yaml\e[0m"
 
 echo -e "\e[35m----Pulsar tests:----\e[0m"
