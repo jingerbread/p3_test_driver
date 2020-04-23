@@ -60,7 +60,7 @@ for repeat in range(1):
             for messageSize in [100]:
                 for producerRateEventsPerSec in [1e5, 2e5, 4e5, -1]:
                     for topics in [1]:
-                        for partitionsPerTopic in [1]: #, 16]:
+                        for partitionsPerTopic in [16]: #[1, 16]:
                             for producersPerWorker in [1]:
                                 producersPerTopic = 1   # int(producersPerWorker * producerWorkers)
                                 for consumerBacklogSizeGB in [0]:
