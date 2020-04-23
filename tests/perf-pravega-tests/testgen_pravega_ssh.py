@@ -53,21 +53,21 @@ tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
 # Message size 100 B
-for repeat in range(1):
-    for producerWorkers in [1]:
-        numWorkers = 0 if localWorker else producerWorkers*2
-        for testDurationMinutes in [1]:
-            for messageSize in [100]:
-                for producerRateEventsPerSec in [1e5, 2e5, 4e5, -1]:
-                    for topics in [1]:
-                        for partitionsPerTopic in [1, 16]:
-                            for producersPerWorker in [1]:
-                                producersPerTopic = 1   # int(producersPerWorker * producerWorkers)
-                                for consumerBacklogSizeGB in [0]:
-                                    for subscriptionsPerTopic in [1]:
-                                        for consumerPerSubscription in [partitionsPerTopic]:
-                                            for includeTimestampInEvent in [True]:
-                                                add_test()
+# for repeat in range(1):
+#     for producerWorkers in [1]:
+#         numWorkers = 0 if localWorker else producerWorkers*2
+#         for testDurationMinutes in [1]:
+#             for messageSize in [100]:
+#                 for producerRateEventsPerSec in [1e5, 2e5, 4e5, -1]:
+#                     for topics in [1]:
+#                         for partitionsPerTopic in [1, 16]:
+#                             for producersPerWorker in [1]:
+#                                 producersPerTopic = 1   # int(producersPerWorker * producerWorkers)
+#                                 for consumerBacklogSizeGB in [0]:
+#                                     for subscriptionsPerTopic in [1]:
+#                                         for consumerPerSubscription in [partitionsPerTopic]:
+#                                             for includeTimestampInEvent in [True]:
+#                                                 add_test()
 
 # Message size 10 KB
 for repeat in range(1):
@@ -75,7 +75,7 @@ for repeat in range(1):
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [1]:
             for messageSize in [10000]:
-                for producerRateEventsPerSec in [1e5, 2e5, 3e5]: #-1]:
+                for producerRateEventsPerSec in [2e5, 3e5]: #-1]:
                     for topics in [1]:
                         for partitionsPerTopic in [1, 16]:
                             for producersPerWorker in [2]:
