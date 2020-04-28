@@ -403,6 +403,7 @@ def text_files_iterator(src, verbose=False):
 
 def load_json_from_file(filename):
     ext = os.path.splitext(filename)[1]
+    print('Reading %s ext: %s' % (filename, ext))
     if ext == '.bz2':
         with closing(bz2.BZ2File(filename, 'rb')) as data_file:
             reader = codecs.getreader("utf-8")

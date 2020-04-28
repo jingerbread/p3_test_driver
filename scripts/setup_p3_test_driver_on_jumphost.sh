@@ -21,6 +21,7 @@ set -e
 
 # Install Python 3.7
 yes | yum -q install gcc openssl-devel bzip2-devel libffi libffi-devel
+mkdir -p /home/aws/tools
 cd /home/aws/tools
 wget https://www.python.org/ftp/python/3.7.7/Python-3.7.7.tgz
 tar xzf Python-3.7.7.tgz
@@ -100,7 +101,7 @@ pip3.7 install -e p3_test_driver
 # Twine is a utility for publishing Python packages on PyPI
 yes | pip3.7 -q install twine
 
-yes | pip3.7 -q install wheel
+pip3.7 install wheel
 
 # Generating distribution archives
 cd p3_test_driver && python3.7 setup.py sdist bdist_wheel
