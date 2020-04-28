@@ -36,7 +36,7 @@ python3.7 -V
 
 # Install virtualenv https://blog.teststation.org/centos/python/2016/05/11/installing-python-virtualenv-centos-7/
 yum -y install epel-release
-yum -y install python34 python-pip
+# yum -y install python34 python-pip
 pip3.7 install -U pip
 pip3.7 install -U virtualenv
 # Make sure you have the latest versions of setuptools and wheel installed:
