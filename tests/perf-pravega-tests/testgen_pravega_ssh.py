@@ -67,7 +67,7 @@ build = False
 #                                 for consumerBacklogSizeGB in [0]:
 #                                     for subscriptionsPerTopic in [1]:
 #                                         for consumerPerSubscription in [partitionsPerTopic]:
-#                                             for includeTimestampInEvent in [True]:
+#                                             for includeTimestampInEvent in [False]:
 #                                                 add_test()
 
 # Message size 10 KB
@@ -84,7 +84,7 @@ for repeat in range(1):
                                 for consumerBacklogSizeGB in [0]:
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
-                                            for includeTimestampInEvent in [True]:
+                                            for includeTimestampInEvent in [False]:
                                                 add_test()
 
 
