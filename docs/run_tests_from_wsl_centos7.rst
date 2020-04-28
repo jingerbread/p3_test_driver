@@ -25,6 +25,19 @@ it will automate Developer installation of p3_test_driver.
 .. parsed-literal::
    time ./scripts/update_local_package_from_src.sh
 
+Useful screen commands:
+.. parsed-literal::
+    Ctlr+A+D (detach from screen)
+    [detached from 5680.p3pravega]
+    [root@dirt-node1:4 fork_p3_test_driver]# screen -ls
+    There is a screen on:
+            5680.p3pravega  (Detached)
+    1 Socket in /run/screen/S-root.
+    [root@dirt-node1:4 fork_p3_test_driver]# screen -XS 5680 quit
+
+.. parsed-literal::
+    grep -r "workload\"\:" -A 12 /home/aws/fork-benchmark/fork_p3_test_driver/data/p3_test_driver/logs/p3_test_driver.log
+
 ***********************************************
 Run p3_test_driver from WSL CentOS7 for Pulsar
 ***********************************************
