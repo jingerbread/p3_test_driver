@@ -16,7 +16,7 @@ def add_test():
         'writer': {
             'enableConnectionPooling': False,
             'enableTransaction': False,
-            'eventPerTransaction': 1,
+            'eventsPerSecond': 1000,
         },
         'includeTimestampInEvent': includeTimestampInEvent,
     }
