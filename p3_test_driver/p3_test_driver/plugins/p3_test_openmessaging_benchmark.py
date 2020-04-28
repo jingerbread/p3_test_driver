@@ -282,6 +282,7 @@ class OpenMessagingBenchmarkSSHTest(BaseTest):
                 logging.info('ssh_host=%s' % rec['ssh_host'])
 
         if rec['ansible']:
+            driver_deploy_dir = '../driver-%s/deploy' % driver['name'].lower()
             with open('%s/vars.yaml' % driver_deploy_dir) as vars_file:
                 rec['ansible_vars'] = yaml.load(vars_file)
             logging.info("ansible_vars=%s" % str(rec['ansible_vars']))
