@@ -10,7 +10,7 @@ def add_test():
         'name': 'Pravega',
         'driverClass': 'io.openmessaging.benchmark.driver.pravega.PravegaBenchmarkDriver',
         'client': {
-            'controllerURI': 'tcp://10.233.4.177:9090',
+            'controllerURI': 'tcp://10.233.66.5:9090',
             'scopeName': 'examples',
         },
         'writer': {
@@ -49,6 +49,7 @@ def add_test():
 test_list = []
 
 localWorker = True
+driver = 'Pravega'
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
