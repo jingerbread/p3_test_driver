@@ -15,10 +15,9 @@ def add_test():
         },
         'writer': {
             'enableConnectionPooling': False,
-            'enableTransaction': False,
-            'eventsPerSecond': 1000,
         },
         'includeTimestampInEvent': includeTimestampInEvent,
+        'enableTransaction': False,
     }
     workload = {
         'messageSize': messageSize,
@@ -67,7 +66,7 @@ build = False
 #                                 for consumerBacklogSizeGB in [0]:
 #                                     for subscriptionsPerTopic in [1]:
 #                                         for consumerPerSubscription in [partitionsPerTopic]:
-#                                             for includeTimestampInEvent in [False]:
+#                                             for includeTimestampInEvent in [True]:
 #                                                 add_test()
 
 # Message size 10 KB
@@ -84,7 +83,7 @@ for repeat in range(1):
                                 for consumerBacklogSizeGB in [0]:
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
-                                            for includeTimestampInEvent in [False]:
+                                            for includeTimestampInEvent in [True]:
                                                 add_test()
 
 
