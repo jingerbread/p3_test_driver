@@ -10,7 +10,7 @@ def add_test():
         'name': 'Pravega',
         'driverClass': 'io.openmessaging.benchmark.driver.pravega.PravegaBenchmarkDriver',
         'client': {
-            'controllerURI': 'tcp://localhost:9090',
+            'controllerURI': 'tcp://10.233.4.177:9090',
             'scopeName': 'examples',
         },
         'writer': {
