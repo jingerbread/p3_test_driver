@@ -15,8 +15,6 @@ def add_test():
         },
         'writer': {
             'enableConnectionPooling': False,
-            'enableTransaction': False,
-            'eventPerTransaction': 1,
         },
         'enableTransaction': False,
         'includeTimestampInEvent': includeTimestampInEvent,
