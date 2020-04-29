@@ -69,7 +69,7 @@ build = False
                                                 add_test()
 
 '''
-Message size 100 B
+# Message size 100 B
 for repeat in range(1):
     for producerWorkers in [1]:
         numWorkers = 0 if localWorker else producerWorkers*2
