@@ -40,6 +40,7 @@ echo -e "\e[35mRun tests on Dirt: \e[0m"
 echo -e "\e[36mtime tests/perf-pravega-tests/testgen_pravega_raul_ssh.py -vv | p3_test_driver -t - -c config/pravega_Dirt_ssh.config.yaml\e[0m"
 echo -e "\e[36mtime tests/perf-pravega-tests/testgen_pravega_ssh.py -vv | p3_test_driver -t - -c config/pravega_Dirt_ssh.config.yaml\e[0m"
 echo -e "\e[35mRun AWS tests: \e[0m"
+echo -e "\e[36mtime tests/perf-pravega-tests/testgen_pravega_0.7.0-310f0c3_ssh.py -vv | p3_test_driver -t - -c config/pravega_ssh.config.yaml\e[0m"
 echo -e "\e[36mtime tests/perf-pravega-tests/testgen_pravega_ssh.py -vv | p3_test_driver -t - -c config/pravega_ssh.config.yaml\e[0m"
 echo -e "\e[36mtime tests/perf-pravega-tests/pravega-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pravega_ssh.config.yaml\e[0m"
 
