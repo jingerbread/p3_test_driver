@@ -309,7 +309,7 @@ class OpenMessagingBenchmarkSSHTest(BaseTest):
             # TODO: Doesn't work because workers.yaml exists.
             workers_args = ''
         else:
-            return_code, results_yaml, errors = self.ssh('cat /opt/perf-tools/omb-pravega-0.7.1/workers.yaml')
+            return_code, results_yaml, errors = self.ssh('cat /opt/benchmark/workers.yaml')
             workers = yaml.load(StringIO(results_yaml))['workers']
             workers = workers[0:numWorkers]
             logging.info("workers=%s" % str(workers))
@@ -317,16 +317,16 @@ class OpenMessagingBenchmarkSSHTest(BaseTest):
             workers_args = '--workers %s' % ','.join(workers)
 
         if driver['name'] == 'Pravega':
-            return_code, results_yaml, errors = self.ssh('cat /opt/perf-tools/omb-pravega-0.7.1/driver-pravega/pravega.yaml')
+            return_code, results_yaml, errors = self.ssh('cat /opt/benchmark/driver-pravega/pravega.yaml')
             deployed_driver = yaml.load(StringIO(results_yaml))
             driver['client']['controllerURI'] = deployed_driver['client']['controllerURI']
         elif driver['name'] == 'Pulsar':
-            return_code, results_yaml, errors = self.ssh('cat /opt/perf-tools/omb-pravega-0.7.1/driver-pulsar/pulsar.yaml')
+            return_code, results_yaml, errors = self.ssh('cat /opt/benchmark/driver-pulsar/pulsar.yaml')
             deployed_driver = yaml.load(StringIO(results_yaml))
             driver['client']['serviceUrl'] = deployed_driver['client']['serviceUrl']
             driver['client']['httpUrl'] = deployed_driver['client']['httpUrl']
         elif driver['name'] == 'Kafka':
-            return_code, results_yaml, errors = self.ssh('cat /opt/perf-tools/omb-pravega-0.7.1/driver-kafka/kafka.yaml')
+            return_code, results_yaml, errors = self.ssh('cat /opt/benchmark/driver-kafka/kafka.yaml')
             deployed_driver = yaml.load(StringIO(results_yaml))
             driver['commonConfig'] = deployed_driver['commonConfig']
         else:
@@ -336,7 +336,7 @@ class OpenMessagingBenchmarkSSHTest(BaseTest):
         self.create_yaml_file(workload, workload_file_name)
 
         cmd = (
-            'cd /opt/perf-tools/omb-pravega-0.7.1' +
+            'cd /opt/benchmark' +
             ' && sudo chmod go+rw .' +
             ' && dd if=/dev/urandom of=' + payload_file_name + ' bs=' + str(workload['messageSize']) + ' count=1 status=none' +
             ' && bin/benchmark --drivers ' + driver_file_name + ' ' + workers_args + ' ' + workload_file_name
@@ -363,7 +363,7 @@ class OpenMessagingBenchmarkSSHTest(BaseTest):
         # Collect results to store in results.json
         try:
             return_code, results_json, errors = self.ssh(
-                'cat /opt/perf-tools/omb-pravega-0.7.1/*' + test_uuid + '*.json',
+                'cat /opt/benchmark/*' + test_uuid + '*.json',
                 print_output=False,
             )
             rec['omb_results'] = json.load(StringIO(results_json))
