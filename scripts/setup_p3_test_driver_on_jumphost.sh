@@ -101,8 +101,6 @@ pip3.7 install -e p3_test_driver
 # Twine is a utility for publishing Python packages on PyPI
 yes | pip3.7 -q install twine
 
-pip3.7 install wheel
-
 # Generating distribution archives
 cd p3_test_driver && python3.7 setup.py sdist bdist_wheel
 # The tar.gz file is a source archive
@@ -124,3 +122,5 @@ echo -e "\e[35m----Pulsar tests:----\e[0m"
 echo -e "\e[36mtests/testgen_pulsar_ssh.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m" # Takes ~ >= 90 min
 echo -e "\e[36mtests/perf-pulsar-tests/pulsar-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m"
 echo -e "\e[36mtests/perf-pulsar-tests/pulsar-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m"
+
+yes | pip3.7 install wheel
