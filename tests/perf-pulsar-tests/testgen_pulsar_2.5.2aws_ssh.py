@@ -4,9 +4,7 @@ from __future__ import print_function
 import json
 import sys
 
-test_list = []
-# Generates 12 test and takes 25 min (duration: 1min)
-# batchingEnabled: True
+
 
 def add_test():
     driver = {
@@ -62,6 +60,7 @@ def add_test():
     test_list.append(t)
 
 test_list = []
+# Generates 28 tests and takes 56 min (duration: 1min)
 
 localWorker = True
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
