@@ -10,17 +10,31 @@ test_list = []
 
 def add_test():
     driver = {
-        'name': 'Pravega',
-        'driverClass': 'io.openmessaging.benchmark.driver.pravega.PravegaBenchmarkDriver',
+        'name': 'Pulsar',
+        'driverClass': 'io.openmessaging.benchmark.driver.pulsar.PulsarBenchmarkDriver',
         'client': {
-            'controllerURI': 'tcp://10.233.66.5:9090',
-            'scopeName': 'examples2',
+          'ioThreads': 8,
+          'connectionsPerBroker': 8,
+          'clusterName': 'local',
+          'namespacePrefix': 'benchmark/ns',
+          'topicType': 'p3test',
+          'persistence': {
+              'ensembleSize': 3,
+              'writeQuorum': 3,
+              'ackQuorum': 2,
+              'deduplicationEnabled': True
+           },
+          'tlsAllowInsecureConnection': False,
+          'tlsEnableHostnameVerification': False,
+          'tlsTrustCertsFilePath': None,
+          'authentication': {'plugin': None, 'data': None}},
         },
-        'writer': {
-            'enableConnectionPooling': False,
-        },
-        'enableTransaction': False,
-        'includeTimestampInEvent': includeTimestampInEvent,
+        'producer': {
+            'batchingEnabled': True,
+            'batchingMaxPublishDelayMs': 1,
+            'blockIfQueueFull': True,
+            'pendingQueueSize': 10000
+         },
     }
     workload = {
         'messageSize': messageSize,
