@@ -34,6 +34,7 @@ def add_test():
             'blockIfQueueFull': True,
             'pendingQueueSize': 10000
          }
+
     }
     workload = {
         'messageSize': messageSize,
