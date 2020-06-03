@@ -60,7 +60,7 @@ def add_test():
     test_list.append(t)
 
 test_list = []
-localWorker = False
+localWorker = True
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
