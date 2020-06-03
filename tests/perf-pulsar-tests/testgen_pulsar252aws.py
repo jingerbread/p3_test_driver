@@ -27,8 +27,7 @@ def add_test():
           'tlsEnableHostnameVerification': False,
           'tlsTrustCertsFilePath': None,
           'authentication': {'plugin': None, 'data': None}},
-        },
-        'producer': {
+          'producer': {
             'batchingEnabled': True,
             'batchingMaxPublishDelayMs': 1,
             'blockIfQueueFull': True,
