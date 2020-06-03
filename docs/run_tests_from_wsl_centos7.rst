@@ -38,6 +38,7 @@ Useful screen commands:
     [root@dirt-node1:4 fork_p3_test_driver]# screen -XS 5680 quit
 
 .. parsed-literal::
+    grep "\] Running test .openmessaging-benchmark.\:" data/logs/p3_test_driver.log
     grep -r "workload\"\:" -A 12 /home/aws/fork-benchmark/fork_p3_test_driver/data/p3_test_driver/logs/p3_test_driver.log
 
 ***********************************************
