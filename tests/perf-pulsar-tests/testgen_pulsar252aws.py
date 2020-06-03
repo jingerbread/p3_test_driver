@@ -7,7 +7,6 @@ import sys
 
 # Generates 28 tests and takes 56 min (duration: 1min)
 def add_test():
-    print('adding test')
     driver = {
         'name': 'Pulsar',
         'driverClass': 'io.openmessaging.benchmark.driver.pulsar.PulsarBenchmarkDriver',
