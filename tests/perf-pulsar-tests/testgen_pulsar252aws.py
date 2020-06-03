@@ -15,7 +15,7 @@ def add_test():
           'connectionsPerBroker': 8,
           'clusterName': 'local',
           'namespacePrefix': 'benchmark/ns',
-          'topicType': 'p3test',
+          'topicType': 'persistent',
           'persistence': {
               'ensembleSize': 3,
               'writeQuorum': 3,
