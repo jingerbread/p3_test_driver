@@ -61,7 +61,6 @@ def add_test():
 
 test_list = []
 localWorker = False
-driver = 'Pulsar'
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
@@ -130,6 +129,6 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
                                                 add_test()
-
+print(test_list)
 print(json.dumps(test_list, sort_keys=True, indent=4, ensure_ascii=False))
 print('Number of tests generated: %d' % len(test_list), file=sys.stderr)
