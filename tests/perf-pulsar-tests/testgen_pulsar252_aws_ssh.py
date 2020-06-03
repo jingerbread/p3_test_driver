@@ -7,6 +7,7 @@ import sys
 
 # Generates 28 tests and takes 56 min (duration: 1min)
 def add_test():
+    print('adding test')
     driver = {
         'name': 'Pulsar',
         'driverClass': 'io.openmessaging.benchmark.driver.pulsar.PulsarBenchmarkDriver',
@@ -32,7 +33,7 @@ def add_test():
             'batchingMaxPublishDelayMs': 1,
             'blockIfQueueFull': True,
             'pendingQueueSize': 10000
-         },
+         }
     }
     workload = {
         'messageSize': messageSize,
