@@ -5,7 +5,7 @@ import json
 import sys
 
 
-
+# Generates 28 tests and takes 56 min (duration: 1min)
 def add_test():
     driver = {
         'name': 'Pulsar',
@@ -60,10 +60,9 @@ def add_test():
     test_list.append(t)
 
 test_list = []
-# Generates 28 tests and takes 56 min (duration: 1min)
-
 localWorker = False
-tarball = '../../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
+driver = 'Pulsar'
+tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
 
@@ -81,7 +80,6 @@ for repeat in range(1):
                                 for consumerBacklogSizeGB in [0]:
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
-                                            for includeTimestampInEvent in [True]:
                                                 add_test()
 
 # Message size 100 B 16 partitionsPerTopic
@@ -98,7 +96,6 @@ for repeat in range(1):
                                 for consumerBacklogSizeGB in [0]:
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
-                                            for includeTimestampInEvent in [True]:
                                                 add_test()
 
 
@@ -116,7 +113,6 @@ for repeat in range(1):
                                 for consumerBacklogSizeGB in [0]:
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
-                                            for includeTimestampInEvent in [True]:
                                                 add_test()
 
 # Message size 10k 16 partitionsPerTopic
@@ -133,8 +129,7 @@ for repeat in range(1):
                                 for consumerBacklogSizeGB in [0]:
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
-                                            for includeTimestampInEvent in [True]:
                                                 add_test()
 
 print(json.dumps(test_list, sort_keys=True, indent=4, ensure_ascii=False))
-print('Number of Pulsar 2.5.2 tests generated: %d' % len(test_list), file=sys.stderr)
+print('Number of tests generated: %d' % len(test_list), file=sys.stderr)
