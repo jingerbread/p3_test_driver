@@ -80,7 +80,7 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
                                                 add_test()
-
+'''
 # Message size 100 B 16 partitionsPerTopic
 for repeat in range(1):
     for producerWorkers in [1]:
@@ -129,6 +129,8 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
                                                 add_test()
+
+'''
 print(test_list)
 print(json.dumps(test_list, sort_keys=True, indent=4, ensure_ascii=False))
 print('Number of tests generated: %d' % len(test_list), file=sys.stderr)
