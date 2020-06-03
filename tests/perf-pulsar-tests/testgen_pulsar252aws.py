@@ -64,7 +64,7 @@ localWorker = True
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
-
+'''
 # Message size 100 B 1 partitionsPerTopic
 for repeat in range(1):
     for producerWorkers in [1]:
@@ -113,14 +113,14 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
                                                 add_test()
-
+'''
 # Message size 10k 16 partitionsPerTopic
 for repeat in range(1):
     for producerWorkers in [1]:
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [1]:
             for messageSize in [10000]:
-                for producerRateEventsPerSec in [2e4, 3e4, 4e4, 5e4, 55e3, 6e4, -1]:
+                for producerRateEventsPerSec in [5e4, 55e3, 6e4, -1]:
                     for topics in [1]:
                         for partitionsPerTopic in [16]:
                             for producersPerWorker in [1]:
