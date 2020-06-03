@@ -15,7 +15,8 @@ Setup p3_test_driver on jump-host (rhel7.4)
     # git clone -b low_cpu https://github.com/jingerbread/p3_test_driver.git fork_p3_test_driver
     # git clone -b UDSPERF-464_run_pulsar_aws_test https://github.com/jingerbread/p3_test_driver.git fork_p3_test_driver
     cd fork_p3_test_driver/
-    time ./scripts/setup_p3_test_driver_on_jumphost.sh && pip3.7 install wheel
+    time ./scripts/setup_p3_test_driver_on_jumphost.sh
+    pip3.7 install wheel
 
 ********************************************
 Developer Installation

@@ -63,7 +63,7 @@ test_list = []
 # Generates 28 tests and takes 56 min (duration: 1min)
 
 localWorker = False
-tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
+tarball = '../../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
 
