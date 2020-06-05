@@ -46,7 +46,8 @@ echo -e "\e[36mtime tests/perf-pravega-tests/pravega-gentest_100b_1p_5e4_rate_2m
 
 echo -e "\e[35m----Pulsar tests:----\e[0m"
 echo -e "\e[35mscreen -S p3pulsar\e[0m"
-echo -e "\e[36mtime tests/perf-pulsar-tests/testgen_pulsar252aws.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m" # Takes ~45 min (1min test)
+echo -e "\e[36mtime tests/perf-pulsar-tests/testgen_pulsar2.5.2RH.py -vv | p3_test_driver -t - -c config/pulsar_RH_config.yaml\e[0m" # Takes ~65 min (1min test)
+echo -e "\e[36mtime tests/perf-pulsar-tests/testgen_pulsar252aws.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m" # Takes ~65 min (1min test)
 echo -e "\e[36mtime tests/perf-pulsar-tests/testgen_pulsar_ssh.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m" # Takes ~45 min (1min test)
 echo -e "\e[36mtime tests/testgen_pulsar_ssh.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m" # Takes ~90 min (if 2min test)
 echo -e "\e[36mtime tests/perf-pulsar-tests/pulsar-gentest_100b_1p_5e4_rate_2min.py -vv | p3_test_driver -t - -c config/pulsar_ssh.config.yaml\e[0m"
