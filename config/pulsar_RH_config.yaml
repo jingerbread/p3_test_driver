@@ -1,0 +1,11 @@
+status_html: data/p3_test_driver/status/pravega.html
+result_filename: data/p3_test_driver/results/%(test)s_%(test_uuid)s.json
+test_driver_log_filename: data/p3_test_driver/logs/p3_test_driver.log
+#ssh_user: root
+#ssh_host: 10.249.248.45
+#ssh_identity_file: ~/.ssh/pravega_Dirt
+kubernetes: true
+docker: false
+aws-ec2: false
+terraform: false
+ansible: true
