@@ -79,7 +79,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
             cmd = [
                 'kubectl', 'wait', '--for=delete', '--timeout=300s',
                 '-n', namespace,
-                'statefulset/%s-openmessaging-benchmarking-worker' % namespace,:
+                'statefulset/%s-openmessaging-benchmarking-worker' % namespace,
                 ]
             subprocess.run(cmd, check=False)
             cmd = [
