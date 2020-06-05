@@ -10,7 +10,8 @@ Setup p3_test_driver on jump-host (rhel7.4)
     cd /home/aws/fork-benchmark
     # Todo: refer to original project if is PR merged:
     # git clone https://github.com/pravega/p3_test_driver
-    git clone -b pulsar2.5.2AWS https://github.com/jingerbread/p3_test_driver.git fork_p3_test_driver
+    git clone -b pulsar2.5.2RH https://github.com/jingerbread/p3_test_driver.git fork_p3_test_driver
+    # git clone -b pulsar2.5.2AWS https://github.com/jingerbread/p3_test_driver.git fork_p3_test_driver
     # git clone -b Dirt https://github.com/jingerbread/p3_test_driver.git fork_p3_test_driver
     # git clone -b low_cpu https://github.com/jingerbread/p3_test_driver.git fork_p3_test_driver
     # git clone -b UDSPERF-464_run_pulsar_aws_test https://github.com/jingerbread/p3_test_driver.git fork_p3_test_driver
@@ -25,6 +26,10 @@ Before running tests, run following command,
 it will automate Developer installation of p3_test_driver.
 
 .. parsed-literal::
+   # Remove ^M symbol
+   # Check with
+   vim -b tests/perf-pulsar-tests/testgen_pulsar2.5.2RH.py
+   dos2unix tests/perf-pulsar-tests/testgen_pulsar2.5.2RH.py
    time ./scripts/update_local_package_from_src.sh
 
 Useful screen commands:
