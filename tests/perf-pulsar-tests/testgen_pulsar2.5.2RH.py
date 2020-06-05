@@ -54,6 +54,7 @@ def add_test():
         numWorkers=numWorkers,
         localWorker=localWorker,
         tarball=tarball,
+        image=image,
         build=build,
         undeploy=True,
     )
