@@ -47,7 +47,8 @@ def add_test():
         'keyDistributor': 'NO_KEY',
     }
     t = dict(
-        test='openmessaging-benchmark-k8s',
+        test='openmessaging-benchmark',
+        # test='openmessaging-benchmark-k8s',
         max_test_attempts=1,
         driver=driver,
         workload=workload,
