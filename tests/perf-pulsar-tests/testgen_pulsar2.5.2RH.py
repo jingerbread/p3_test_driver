@@ -55,6 +55,7 @@ def add_test():
         localWorker=localWorker,
         tarball=tarball,
         image=image,
+        namespace=namespace,
         build=build,
         undeploy=True,
     )
@@ -62,7 +63,7 @@ def add_test():
 
 test_list = []
 localWorker = True
-namespace = 'examples'
+namespace = 'default'
 image = 'localhost:5000/pulsar-omb/2.5.2:dev'
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
