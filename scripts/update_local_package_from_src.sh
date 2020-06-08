@@ -1,6 +1,6 @@
 #!/bin/bash
 # [DRAFT] version
-# See full instruction in docs/run_tests_from_wsl_centos7.rst
+# See full instruction in docs/run_tests.rst
 # Script to build/install local p3_driver_package from src
 # (checked only for WSL CentOS7)
 
