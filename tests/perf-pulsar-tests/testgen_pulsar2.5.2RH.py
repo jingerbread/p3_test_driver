@@ -11,6 +11,8 @@ def add_test():
         'name': 'Pulsar',
         'driverClass': 'io.openmessaging.benchmark.driver.pulsar.PulsarBenchmarkDriver',
         'client': {
+            'serviceUrl': 'pulsar://pulsar-broker.default.svc.cluster.local:6650',
+            'httpUrl': 'http://pulsar-broker.default.svc.cluster.local:8080',
             'ioThreads': 8,
             'connectionsPerBroker': 8,
             'clusterName': 'local',
