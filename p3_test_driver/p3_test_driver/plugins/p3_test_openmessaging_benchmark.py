@@ -211,7 +211,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
 
         # Collect logs to store in results.json
         cmd = [
-            'kubectl', 'exec', '-n', namespace, 'examples-openmessaging-benchmarking-driver', '--',
+            'kubectl', 'exec', '-n', namespace, '%s-openmessaging-benchmarking-driver' % namespace, '--',
             'bash', '-c',
             'cat *' + test_uuid + '*.json',
         ]
