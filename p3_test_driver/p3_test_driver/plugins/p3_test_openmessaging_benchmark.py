@@ -94,6 +94,10 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
         numWorkers = self.test_config['numWorkers']
         image = self.test_config['image']
         namespace = self.test_config['namespace']
+        ombHelmPath = self.test_config['ombHelmPath']
+        if ombHelmPath is None:
+            ombHelmPath = '../deployment/kubernetes/helm/benchmark'
+
         if self.test_config['build']:
             self.undeploy(wait=False)
             self.build()
@@ -105,7 +109,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
             '--namespace', namespace,
             '--set', 'image=%s' % image,
             '--set', 'numWorkers=%d' % numWorkers,
-            '../deployment/kubernetes/helm/benchmark',
+            ombHelmPath,
             ]
         subprocess.run(cmd, check=True)
         cmd = [
