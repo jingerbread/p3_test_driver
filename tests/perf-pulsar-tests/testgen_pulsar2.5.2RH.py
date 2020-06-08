@@ -15,7 +15,7 @@ def add_test():
             'httpUrl': 'http://pulsar-broker.default.svc.cluster.local:8080',
             'ioThreads': 8,
             'connectionsPerBroker': 8,
-            'clusterName': 'local',
+            'clusterName': 'pulsar',
             'namespacePrefix': 'benchmark/ns',
             'topicType': 'persistent',
             'persistence': {
