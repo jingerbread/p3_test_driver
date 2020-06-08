@@ -80,7 +80,7 @@ for repeat in range(1):
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [1]:
             for messageSize in [100]:
-                for producerRateEventsPerSec in [5e4]:  # [5e4, 6e4, 6e5, 1e6, -1]:
+                for producerRateEventsPerSec in [5e4, 6e4, 6e5, 1e6, -1]:
                     for topics in [1]:
                         for partitionsPerTopic in [1]:
                             for producersPerWorker in [1]:
@@ -89,7 +89,7 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
                                                 add_test()
-'''
+
 # Message size 100 B 16 partitionsPerTopic
 for repeat in range(1):
     for producerWorkers in [1]:
@@ -129,7 +129,7 @@ for repeat in range(1):
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [1]:
             for messageSize in [10000]:
-                for producerRateEventsPerSec in [5e4, 55e3, 6e4, -1]:
+                for producerRateEventsPerSec in [2e4, 3e4, 4e4, 5e4, 55e3, 6e4, -1]:
                     for topics in [1]:
                         for partitionsPerTopic in [16]:
                             for producersPerWorker in [1]:
@@ -138,7 +138,7 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [partitionsPerTopic]:
                                             add_test()
-'''
+
 
 print(json.dumps(test_list, sort_keys=True, indent=4, ensure_ascii=False))
 print('Number of tests generated: %d' % len(test_list), file=sys.stderr)
