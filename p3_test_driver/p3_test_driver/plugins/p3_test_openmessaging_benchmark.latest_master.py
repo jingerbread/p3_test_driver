@@ -71,7 +71,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
 
     def undeploy(self, wait=True):
         namespace = self.test_config['namespace']
-        cmd = ['helm', 'delete', '--purge', '%s-openmessaging-benchmarking' % namespace]
+        cmd = ['helm', 'uninstall', '%s-openmessaging-benchmarking' % namespace]
         subprocess.run(cmd, check=False)
         if wait:
             cmd = [
