@@ -61,8 +61,8 @@ def get_class_property(class_type, class_name, property_name, default=None):
 
 def get_class(class_type, class_name):
     global _plugin_toc
-    print('p3_plugin_manager: _plugin_toc=%s' % _plugin_toc)
-    print('class_type=%s class_name=%s' %(class_type, class_name)) # todo remove
+    # print('p3_plugin_manager: _plugin_toc=%s' % _plugin_toc)
+    # print('class_type=%s class_name=%s' %(class_type, class_name))
     k = _get_item_key(class_type, class_name)
     return _plugin_toc[k]['class']
 
