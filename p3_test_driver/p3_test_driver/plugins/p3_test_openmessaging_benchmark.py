@@ -98,7 +98,9 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
         if ombHelmPath is None:
             ombHelmPath = '../deployment/kubernetes/helm/benchmark'
 
+        # TODO: remove
         print('ombHelmPath: %s' % ombHelmPath)
+        print('image: %s' % image)
 
         if self.test_config['build']:
             self.undeploy(wait=False)
