@@ -216,7 +216,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
             'cat *' + test_uuid + '*.json',
         ]
         return_code, results_json, errors = system_command(cmd, print_output=False, shell=False, raise_on_error=False)
-        rec['omb_results'] = json.load(StringIO(results_json.decode()))
+        rec['omb_results'] = json.load(StringIO(results_json))
 
         # Collect and extract logs (outside of results.json) (not required)
         cmd = [
