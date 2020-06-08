@@ -174,7 +174,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
             workers_args = '--workers %s' % ','.join(workers)
 
         cmd = [
-            'kubectl', 'exec', '-n', namespace, 'examples-openmessaging-benchmarking-driver', '--',
+            'kubectl', 'exec', '-n', namespace, '%s-openmessaging-benchmarking-driver' % namespace, '--',
             'bash', '-c',
             'rm -f /tmp/logs.tar.gz' +
             ' && dd if=/dev/urandom of=' + payload_file_name + ' bs=' + str(workload['messageSize']) + ' count=1 status=none' +
