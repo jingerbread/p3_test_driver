@@ -97,7 +97,7 @@ You must use Python 3.7 or greater.
     pip install p3_test_driver
     tests/testgen_pravega_ssh.py | p3_test_driver -t - -c config/pravega_ssh.config.yaml
 
-See `run test from CentOS7 <https://github.com/jingerbread/p3_test_driver/blob/UDSPERF-464_run_pulsar_aws_test/docs/run_tests_from_wsl_centos7.rst>`__ instruction
+See `run tests from CentOS7/8 <https://github.com/jingerbread/p3_test_driver/blob/UDSPERF-464_run_pulsar_aws_test/docs/run_tests.rst>`__ instruction
 
 Run Jupyter for Analysis of Results
 -----------------------------------
