@@ -130,6 +130,38 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
                 ]
             subprocess.run(cmd, check=True)
 
+    def inspect_environment(self):
+        rec = self.test_config
+        driver = rec['driver']
+
+        rec['git_commit'] = subprocess.run(['git', 'log', '--oneline', '-1'], capture_output=True, check=True).stdout.decode().rstrip()
+
+        if rec['terraform']:
+            driver_deploy_dir = '../driver-%s/deploy' % driver['name'].lower()
+            terraform_show_json = subprocess.run(
+                ['terraform', 'show', '-json'],
+                cwd=driver_deploy_dir,
+                check=True,
+                capture_output=True,
+            ).stdout.decode()
+            rec['terraform_show'] = json.load(StringIO(terraform_show_json))
+            #logging.debug('terraform_show=%s' % rec['terraform_show'])
+
+            if rec.get('ssh_host', '') == '':
+                rec['ssh_host'] = subprocess.run(
+                    ['terraform', 'output', 'client_ssh_host'],
+                    cwd=driver_deploy_dir,
+                    check=True,
+                    capture_output=True,
+                ).stdout.decode().rstrip()
+                logging.info('ssh_host=%s' % rec['ssh_host'])
+
+        if rec['ansible']:
+            driver_deploy_dir = '../driver-%s/deploy' % driver['name'].lower()
+            with open('%s/vars.yaml' % driver_deploy_dir) as vars_file:
+                rec['ansible_vars'] = yaml.load(vars_file)
+            logging.info("ansible_vars=%s" % str(rec['ansible_vars']))
+
 
     def run_test(self):
         rec = self.test_config
