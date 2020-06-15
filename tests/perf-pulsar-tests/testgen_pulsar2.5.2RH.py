@@ -5,7 +5,7 @@ import json
 import sys
 
 
-# Generates 28 tests and takes 56 min (duration: 1min)
+# Generates 44 tests and takes ~176 min (duration: 2min)
 def add_test():
     driver = {
         'name': 'Pulsar',
@@ -74,13 +74,13 @@ tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
 
-# Message size 100 B 1 partitionsPerTopic
+# Message size 100 B 1 partitionsPerTopic 9 tests
 for repeat in range(1):
     for producerWorkers in [1]:
         numWorkers = 0 if localWorker else producerWorkers*2
-        for testDurationMinutes in [1]:
+        for testDurationMinutes in [2]:
             for messageSize in [100]:
-                for producerRateEventsPerSec in [5e4, 6e4, 6e5, 1e6, -1]:
+                for producerRateEventsPerSec in [1e2, 1e3, 5e3, 1e4, 5e4, 6e4, 6e5, 1e6, -1]:
                     for topics in [1]:
                         for partitionsPerTopic in [1]:
                             for producersPerWorker in [1]:
@@ -90,13 +90,13 @@ for repeat in range(1):
                                         for consumerPerSubscription in [partitionsPerTopic]:
                                                 add_test()
 
-# Message size 100 B 16 partitionsPerTopic
+# Message size 100 B 16 partitionsPerTopic 9 tests
 for repeat in range(1):
     for producerWorkers in [1]:
         numWorkers = 0 if localWorker else producerWorkers*2
-        for testDurationMinutes in [1]:
+        for testDurationMinutes in [2]:
             for messageSize in [100]:
-                for producerRateEventsPerSec in [5e4, 6e4, 6e5, 1e6, -1]:
+                for producerRateEventsPerSec in [1e2, 1e3, 5e3, 1e4, 5e4, 6e4, 6e5, 1e6, -1]:
                     for topics in [1]:
                         for partitionsPerTopic in [16]:
                             for producersPerWorker in [1]:
@@ -107,13 +107,13 @@ for repeat in range(1):
                                                 add_test()
 
 
-# Message size 10k 1 partitionsPerTopic
+# Message size 10k 1 partitionsPerTopic 13 tests
 for repeat in range(1):
     for producerWorkers in [1]:
         numWorkers = 0 if localWorker else producerWorkers*2
-        for testDurationMinutes in [1]:
+        for testDurationMinutes in [2]:
             for messageSize in [10000]:
-                for producerRateEventsPerSec in [2e4, 3e4, 4e4, 5e4, 55e3, 6e4, -1]:
+                for producerRateEventsPerSec in [1e3, 3e3, 9e3, 15e3, 25e3, 35e3, 2e4, 3e4, 4e4, 5e4, 55e3, 6e4, -1]:
                     for topics in [1]:
                         for partitionsPerTopic in [1]:
                             for producersPerWorker in [1]:
@@ -123,13 +123,13 @@ for repeat in range(1):
                                         for consumerPerSubscription in [partitionsPerTopic]:
                                                 add_test()
 
-# Message size 10k 16 partitionsPerTopic
+# Message size 10k 16 partitionsPerTopic 13 tests
 for repeat in range(1):
     for producerWorkers in [1]:
         numWorkers = 0 if localWorker else producerWorkers*2
-        for testDurationMinutes in [1]:
+        for testDurationMinutes in [2]:
             for messageSize in [10000]:
-                for producerRateEventsPerSec in [2e4, 3e4, 4e4, 5e4, 55e3, 6e4, -1]:
+                for producerRateEventsPerSec in [1e3, 3e3, 9e3, 15e3, 25e3, 35e3,  2e4, 3e4, 4e4, 5e4, 55e3, 6e4, -1]:
                     for topics in [1]:
                         for partitionsPerTopic in [16]:
                             for producersPerWorker in [1]:
