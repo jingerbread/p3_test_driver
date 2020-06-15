@@ -166,6 +166,8 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
     def run_test(self):
         rec = self.test_config
 
+        self.inspect_environment()
+
         self.deploy()
 
         git_commit = subprocess.run(['git', 'log', '--oneline', '-1'], capture_output=True, check=True).stdout.decode()

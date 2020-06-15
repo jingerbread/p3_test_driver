@@ -44,6 +44,7 @@ Useful screen commands:
 
 .. parsed-literal::
     grep "\] Running test .openmessaging-benchmark.\:" data/logs/p3_test_driver.log
+    grep "\] Running test .openmessaging-benchmark-k8s.\:" /home/pulsar/fork-benchmark/fork_p3_test_driver/data/p3_test_driver/logs/p3_test_driver.log
     grep -r "workload\"\:" -A 12 /home/aws/fork-benchmark/fork_p3_test_driver/data/p3_test_driver/logs/p3_test_driver.log
 
 ***********************************************
