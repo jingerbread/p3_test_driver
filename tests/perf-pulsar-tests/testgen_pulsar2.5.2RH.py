@@ -21,7 +21,7 @@ def add_test():
             'persistence': {
                 'ensembleSize': 3,
                 'writeQuorum': 3,
-                'ackQuorum': 2,
+                'ackQuorum': 3,
                 'deduplicationEnabled': True
             },
             'tlsAllowInsecureConnection': False,
