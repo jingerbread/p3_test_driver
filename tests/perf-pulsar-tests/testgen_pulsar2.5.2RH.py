@@ -69,7 +69,7 @@ test_list = []
 localWorker = False
 namespace = 'default'
 ombHelmPath = '../deployment/kubernetes/helm/pulsar-benchmark'
-image = 'jingerbread/pulsar-omb:dev2.5.2-3'
+image = 'jingerbread/pulsar-omb:dev2.5.2-4'
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
