@@ -81,7 +81,7 @@ for repeat in range(1):
         for testDurationMinutes in [2]:
             for messageSize in [100]:
                 for producerRateEventsPerSec in [1e2, 1e3, 5e3, 1e4, 5e4, 6e4, 6e5, 1e6, -1]:
-                    for topics in [4]:
+                    for topics in [16]:
                         for partitionsPerTopic in [1]:
                             for producersPerWorker in [2]:
                                 producersPerTopic = int(producersPerWorker * producerWorkers)
@@ -97,7 +97,7 @@ for repeat in range(1):
         for testDurationMinutes in [2]:
             for messageSize in [100]:
                 for producerRateEventsPerSec in [1e2, 1e3, 5e3, 1e4, 5e4, 6e4, 6e5, 1e6, -1]:
-                    for topics in [4]:
+                    for topics in [16]:
                         for partitionsPerTopic in [16]:
                             for producersPerWorker in [2]:
                                 producersPerTopic = int(producersPerWorker * producerWorkers)
@@ -114,7 +114,7 @@ for repeat in range(1):
         for testDurationMinutes in [2]:
             for messageSize in [10000]:
                 for producerRateEventsPerSec in [1e3, 3e3, 9e3, 15e3, 25e3, 35e3, 2e4, 3e4, 4e4, 5e4, 55e3, 6e4, -1]:
-                    for topics in [4]:
+                    for topics in [16]:
                         for partitionsPerTopic in [1]:
                             for producersPerWorker in [2]:
                                 producersPerTopic = int(producersPerWorker * producerWorkers)
@@ -130,7 +130,7 @@ for repeat in range(1):
         for testDurationMinutes in [2]:
             for messageSize in [10000]:
                 for producerRateEventsPerSec in [1e3, 3e3, 9e3, 15e3, 25e3, 35e3,  2e4, 3e4, 4e4, 5e4, 55e3, 6e4, -1]:
-                    for topics in [4]:
+                    for topics in [16]:
                         for partitionsPerTopic in [16]:
                             for producersPerWorker in [2]:
                                 producersPerTopic = int(producersPerWorker * producerWorkers)
