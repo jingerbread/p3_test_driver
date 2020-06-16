@@ -89,7 +89,7 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [producersPerTopic]:
                                                 add_test()
-'''
+
 # Message size 100 B 16 partitionsPerTopic 9 tests
 for repeat in range(1):
     for producerWorkers in [4]:
@@ -97,8 +97,8 @@ for repeat in range(1):
         for testDurationMinutes in [2]:
             for messageSize in [100]:
                 for producerRateEventsPerSec in [1e2, 1e3, 5e3, 1e4, 5e4, 6e4, 6e5, 1e6, -1]:
-                    for topics in [16]:
-                        for partitionsPerTopic in [4]:
+                    for topics in [4]:
+                        for partitionsPerTopic in [16]:
                             for producersPerWorker in [2]:
                                 producersPerTopic = int(producersPerWorker * producerWorkers)
                                 for consumerBacklogSizeGB in [0]:
@@ -130,15 +130,15 @@ for repeat in range(1):
         for testDurationMinutes in [2]:
             for messageSize in [10000]:
                 for producerRateEventsPerSec in [1e3, 3e3, 9e3, 15e3, 25e3, 35e3,  2e4, 3e4, 4e4, 5e4, 55e3, 6e4, -1]:
-                    for topics in [16]:
-                        for partitionsPerTopic in [4]:
+                    for topics in [4]:
+                        for partitionsPerTopic in [16]:
                             for producersPerWorker in [2]:
                                 producersPerTopic = int(producersPerWorker * producerWorkers)
                                 for consumerBacklogSizeGB in [0]:
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [producersPerTopic]:
                                             add_test()
-'''
+
 
 print(json.dumps(test_list, sort_keys=True, indent=4, ensure_ascii=False))
 print('Number of tests generated: %d' % len(test_list), file=sys.stderr)
