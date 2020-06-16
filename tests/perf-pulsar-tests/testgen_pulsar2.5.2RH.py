@@ -51,7 +51,7 @@ def add_test():
     t = dict(
         test='openmessaging-benchmark-k8s',
         # test='openmessaging-benchmark-k8s',
-        max_test_attempts=1,
+        max_test_attempts=2,
         driver=driver,
         workload=workload,
         numWorkers=numWorkers,
