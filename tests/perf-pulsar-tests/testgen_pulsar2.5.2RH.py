@@ -5,7 +5,7 @@ import json
 import sys
 
 
-# Generates 44 tests and takes ~176 min (duration: 2min)
+# Generates 44 tests and takes ~185m (duration: 2min)
 def add_test():
     driver = {
         'name': 'Pulsar',
@@ -80,7 +80,7 @@ for repeat in range(1):
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
             for messageSize in [100]:
-                for producerRateEventsPerSec in [1e2, 1e3, 5e3, 1e4, 5e4, 6e4, 6e5, 1e6, -1]:
+                for producerRateEventsPerSec in [5e4]:   # [1e2, 1e3, 5e3, 1e4, 5e4, 6e4, 6e5, 1e6, -1]:
                     for topics in [4]:
                         for partitionsPerTopic in [1]:
                             for producersPerWorker in [2]:
@@ -89,7 +89,7 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [producersPerTopic]:
                                                 add_test()
-
+'''
 # Message size 100 B 16 partitionsPerTopic 9 tests
 for repeat in range(1):
     for producerWorkers in [4]:
@@ -138,7 +138,7 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [producersPerTopic]:
                                             add_test()
-
+'''
 
 print(json.dumps(test_list, sort_keys=True, indent=4, ensure_ascii=False))
 print('Number of tests generated: %d' % len(test_list), file=sys.stderr)
