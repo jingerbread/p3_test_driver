@@ -73,7 +73,7 @@ image = 'jingerbread/pulsar-omb:dev2.5.2-560d085'
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
-
+'''
 # Message size 100 B 1 partitionsPerTopic 9 tests
 for repeat in range(1):
     for producerWorkers in [2]:
@@ -106,7 +106,7 @@ for repeat in range(1):
                                         for consumerPerSubscription in [producersPerTopic]:
                                                 add_test()
 
-
+'''
 # Message size 10k 1 partitionsPerTopic 13 tests
 for repeat in range(1):
     for producerWorkers in [2]:
