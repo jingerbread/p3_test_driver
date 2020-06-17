@@ -108,7 +108,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
         if self.test_config['build'] or self.test_config['undeploy']:
             self.undeploy(wait=True)
         cmd = [
-            'helm', 'upgrade', '--install', '--timeout', '1m', '--wait', '--debug',
+            'helm', 'upgrade', '--install', '--timeout', '2m', '--wait', '--debug',
             '%s-openmessaging-benchmarking' % namespace,
             '--namespace', namespace,
             '--set', 'image=%s' % image,
@@ -117,14 +117,14 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
             ]
         subprocess.run(cmd, check=True)
         cmd = [
-            'kubectl', 'wait', '--for=condition=Ready', '--timeout=60s',
+            'kubectl', 'wait', '--for=condition=Ready', '--timeout=2m',
             '-n', namespace,
             'pod/%s-openmessaging-benchmarking-driver' % namespace,
             ]
         subprocess.run(cmd, check=True)
         for worker_number in range(numWorkers):
             cmd = [
-                'kubectl', 'wait', '--for=condition=Ready', '--timeout=60s',
+                'kubectl', 'wait', '--for=condition=Ready', '--timeout=2m',
                 '-n', namespace,
                 'pod/%s-openmessaging-benchmarking-worker-%d' % (namespace, worker_number),
                 ]
