@@ -69,7 +69,7 @@ test_list = []
 localWorker = False
 namespace = 'default'
 ombHelmPath = '../deployment/kubernetes/helm/pulsar-benchmark'
-image = 'jingerbread/pulsar-omb:dev2.5.2-4'
+image = 'jingerbread/pulsar-omb:dev2.5.2-560d085'
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
@@ -92,7 +92,7 @@ for repeat in range(1):
 
 # Message size 100 B 16 partitionsPerTopic 9 tests
 for repeat in range(1):
-    for producerWorkers in [4]:
+    for producerWorkers in [2]:
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
             for messageSize in [100]:
@@ -109,7 +109,7 @@ for repeat in range(1):
 
 # Message size 10k 1 partitionsPerTopic 13 tests
 for repeat in range(1):
-    for producerWorkers in [1]:
+    for producerWorkers in [2]:
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
             for messageSize in [10000]:
@@ -125,7 +125,7 @@ for repeat in range(1):
 
 # Message size 10k 16 partitionsPerTopic 13 tests
 for repeat in range(1):
-    for producerWorkers in [1]:
+    for producerWorkers in [2]:
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
             for messageSize in [10000]:
