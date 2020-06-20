@@ -73,7 +73,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
         namespace = self.test_config['namespace']
         # helm v3 --purge is default behaviour - no longer need the flag
         # cmd = ['helm', 'delete', '--purge', '%s-openmessaging-benchmarking' % namespace]
-        cmd = ['/home/pulsar/tools/helm', 'delete', '%s-openmessaging-benchmarking' % namespace]
+        cmd = ['helm3', 'delete', '%s-openmessaging-benchmarking' % namespace]
         subprocess.run(cmd, check=False)
         if wait:
             cmd = [
@@ -108,7 +108,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
         if self.test_config['build'] or self.test_config['undeploy']:
             self.undeploy(wait=True)
         cmd = [
-            '/home/pulsar/tools/helm', 'upgrade', '--install', '--timeout', '2m', '--wait', '--debug',
+            'helm3', 'upgrade', '--install', '--timeout', '2m', '--wait', '--debug',
             '%s-openmessaging-benchmarking' % namespace,
             '--namespace', namespace,
             '--set', 'image=%s' % image,
