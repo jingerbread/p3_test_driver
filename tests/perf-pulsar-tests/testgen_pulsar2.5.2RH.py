@@ -74,7 +74,7 @@ tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
 '''
-# Message size 10k 16 partitionsPerTopic 13 tests
+# Message size 10k 16 partitionsPerTopic 14 tests
 for repeat in range(1):
     for producerWorkers in [2]:
         numWorkers = 0 if localWorker else producerWorkers*2
@@ -89,8 +89,8 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [producersPerTopic]:
                                             add_test()                                            
-'''
-# Message size 10k 1 partitionsPerTopic 13 tests
+
+# Message size 10k 1 partitionsPerTopic 14 tests
 for repeat in range(1):
     for producerWorkers in [2]:
         numWorkers = 0 if localWorker else producerWorkers*2
@@ -140,7 +140,7 @@ for repeat in range(1):
                                         for consumerPerSubscription in [producersPerTopic]:
                                             add_test()
 
-'''
+
 
 print(json.dumps(test_list, sort_keys=True, indent=4, ensure_ascii=False))
 print('Number of tests generated: %d' % len(test_list), file=sys.stderr)
