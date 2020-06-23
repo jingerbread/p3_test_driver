@@ -16,7 +16,7 @@ def add_test():
             'ioThreads': 8,
             'connectionsPerBroker': 8,
             'clusterName': 'pulsar',
-            'namespacePrefix': 'benchmark/ns',
+            'namespacePrefix': 'benchmark/10k16p1pns',
             'topicType': 'persistent',
             'persistence': {
                 'ensembleSize': 3,
