@@ -79,7 +79,8 @@ for repeat in range(1):
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
             for messageSize in [10000]:
-                for producerRateEventsPerSec in [1e6, 1e3, 5e5, 6e4, 3e3, 5e4, 55e3, 9e3, 4e4, 15e3, 3e4, 25e3, 35e3, 2e4]:
+                #for producerRateEventsPerSec in [1e6, 1e3, 5e5, 6e4, 3e3, 5e4, 55e3, 9e3, 4e4, 15e3, 3e4, 25e3, 35e3, 2e4]:
+                for producerRateEventsPerSec in [5e4, 55e3]:
                     for topics in [4]:
                         for partitionsPerTopic in [16]:
                             for producersPerWorker in [2]:
