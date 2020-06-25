@@ -115,6 +115,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
             '--set', 'numWorkers=%d' % numWorkers,
             ombHelmPath,
             ]
+        print('depploy(): Run cmd: %s' % cmd)
         subprocess.run(cmd, check=True)
         cmd = [
             'kubectl', 'wait', '--for=condition=Ready', '--timeout=2m',
