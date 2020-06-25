@@ -115,7 +115,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
             '--set', 'numWorkers=%d' % numWorkers,
             ombHelmPath,
             ]
-        print('depploy(): Run cmd: %s' % cmd)
+        print('deploy(): Run cmd: %s' % cmd)
         subprocess.run(cmd, check=True)
         cmd = [
             'kubectl', 'wait', '--for=condition=Ready', '--timeout=2m',
@@ -129,6 +129,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
                 '-n', namespace,
                 'pod/%s-openmessaging-benchmarking-worker-%d' % (namespace, worker_number),
                 ]
+            print('deploy(): Run cmd: %s' % cmd)
             subprocess.run(cmd, check=True)
 
     def inspect_environment(self):
