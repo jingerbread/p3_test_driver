@@ -87,7 +87,7 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [producersPerTopic]:
                                             add_test()
-'''
+
 # Message size 100 B 16 partitionsPerTopic 9 tests
 for repeat in range(1):
     for producerWorkers in [2]:

@@ -73,7 +73,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
         namespace = self.test_config['namespace']
         # helm v3 --purge is default behaviour - no longer need the flag
         # cmd = ['helm', 'delete', '--purge', '%s-openmessaging-benchmarking' % namespace]
-        cmd = ['helm3', 'delete', '%s-openmessaging-benchmarking' % namespace]
+        cmd = ['helm3', 'uninstall', '%s-openmessaging-benchmarking' % namespace]
         subprocess.run(cmd, check=False)
         if wait:
             cmd = [
