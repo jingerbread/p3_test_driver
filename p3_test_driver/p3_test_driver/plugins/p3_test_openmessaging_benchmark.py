@@ -77,14 +77,14 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
         cmd = ['helm3', 'uninstall', '%s-openmessaging-benchmarking' % namespace]
         subprocess.run(cmd, check=False)
 
-        for worker_number in range(numWorkers):
-            cmd = [
-                'kubectl', 'delete',
-                '-n', namespace,
-                'pod/%s-openmessaging-benchmarking-worker-%d' % (namespace, worker_number),
-                ]
-            print('undeploy(): Run cmd: %s' % cmd)
-            subprocess.run(cmd, check=True)
+        # for worker_number in range(numWorkers):
+        #     cmd = [
+        #         'kubectl', 'delete',
+        #         '-n', namespace,
+        #         'pod/%s-openmessaging-benchmarking-worker-%d' % (namespace, worker_number),
+        #         ]
+        #     print('undeploy(): Run cmd: %s' % cmd)
+        #     subprocess.run(cmd, check=True)
 
         if wait:
             cmd = [
@@ -119,7 +119,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
         if self.test_config['build'] or self.test_config['undeploy']:
             self.undeploy(wait=True)
         cmd = [
-            'helm3', '--install', '--timeout', '3m', '--wait', '--debug',
+            'helm3', 'upgrade', '--install', '--timeout', '3m', '--wait', '--debug',
             '%s-openmessaging-benchmarking' % namespace,
             '--namespace', namespace,
             '--set', 'image=%s' % image,
