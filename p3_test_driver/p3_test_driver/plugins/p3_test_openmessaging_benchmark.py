@@ -119,7 +119,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
         if self.test_config['build'] or self.test_config['undeploy']:
             self.undeploy(wait=True)
         cmd = [
-            'helm3', 'upgrade', '--install', '--timeout', '3m', '--wait', '--debug',
+            'helm3', '--install', '--timeout', '3m', '--wait', '--debug',
             '%s-openmessaging-benchmarking' % namespace,
             '--namespace', namespace,
             '--set', 'image=%s' % image,
