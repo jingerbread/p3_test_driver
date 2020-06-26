@@ -71,10 +71,21 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
 
     def undeploy(self, wait=True):
         namespace = self.test_config['namespace']
+        numWorkers = self.test_config['numWorkers']
         # helm v3 --purge is default behaviour - no longer need the flag
         # cmd = ['helm', 'delete', '--purge', '%s-openmessaging-benchmarking' % namespace]
         cmd = ['helm3', 'uninstall', '%s-openmessaging-benchmarking' % namespace]
         subprocess.run(cmd, check=False)
+
+        for worker_number in range(numWorkers):
+            cmd = [
+                'kubectl', 'delete',
+                '-n', namespace,
+                'pod/%s-openmessaging-benchmarking-worker-%d' % (namespace, worker_number),
+                ]
+            print('undeploy(): Run cmd: %s' % cmd)
+            subprocess.run(cmd, check=True)
+
         if wait:
             cmd = [
                 'kubectl', 'wait', '--for=delete', '--timeout=300s',
