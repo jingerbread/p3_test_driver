@@ -179,10 +179,12 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
 
 
     def run_test(self):
+        print("run_test: Runnning test OpenMessagingBenchmarkK8sTest")
         rec = self.test_config
 
         self.inspect_environment()
-
+        print("run_test: self.undeploy(wait=True)")
+        self.undeploy(wait=True)
         self.deploy()
 
         git_commit = subprocess.run(['git', 'log', '--oneline', '-1'], capture_output=True, check=True).stdout.decode()
