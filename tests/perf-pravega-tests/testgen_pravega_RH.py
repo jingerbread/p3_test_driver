@@ -52,8 +52,8 @@ test_list = []
 localWorker = False
 namespace = 'default'
 ombHelmPath = '../deployment/kubernetes/helm/pulsar-benchmark'
-image = 'devops-repo.isus.emc.com:8116/maria/omb:dev2.5.2-15b0f5e-28.06.2020'
-# image = 'devops-repo.isus.emc.com:8116/maria/omb:dev2.5.2-6f923b9-nonetty-1'
+#image = 'devops-repo.isus.emc.com:8116/maria/omb:dev2.5.2-15b0f5e-28.06.2020'
+image = 'devops-repo.isus.emc.com:8116/maria/omb:dev2.5.2-6f923b9-nonetty-1'
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
