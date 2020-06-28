@@ -71,20 +71,14 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
 
     def undeploy(self, wait=True):
         namespace = self.test_config['namespace']
-        numWorkers = self.test_config['numWorkers']
-        # helm v3 --purge is default behaviour - no longer need the flag
-        # cmd = ['helm', 'delete', '--purge', '%s-openmessaging-benchmarking' % namespace]
+        # https://containers.goffinet.org/content/k8s-04-objets-kubernetes/05-statefulsets-kubernetes.html
+        # StatefulSets do not provide any guarantees on the termination of pods when a StatefulSet is deleted.
+        # To achieve ordered and graceful termination of the pods in the StatefulSet,
+        # it is possible to scale the StatefulSet down to 0 prior to deletion.
+        cmd = ['kubectl', 'scale', 'statefulset.apps/%s--openmessaging-benchmarking-worker' % namespace, '--replicas=0']
+        subprocess.run(cmd, check=False)
         cmd = ['helm3', 'uninstall', '%s-openmessaging-benchmarking' % namespace]
         subprocess.run(cmd, check=False)
-
-        # for worker_number in range(numWorkers):
-        #     cmd = [
-        #         'kubectl', 'delete',
-        #         '-n', namespace,
-        #         'pod/%s-openmessaging-benchmarking-worker-%d' % (namespace, worker_number),
-        #         ]
-        #     print('undeploy(): Run cmd: %s' % cmd)
-        #     subprocess.run(cmd, check=True)
 
         if wait:
             cmd = [
