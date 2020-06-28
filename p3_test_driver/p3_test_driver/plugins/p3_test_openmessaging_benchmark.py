@@ -76,6 +76,7 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
         # To achieve ordered and graceful termination of the pods in the StatefulSet,
         # it is possible to scale the StatefulSet down to 0 prior to deletion.
         cmd = ['kubectl', 'scale', 'statefulset.apps/%s--openmessaging-benchmarking-worker' % namespace, '--replicas=0']
+        print('undeploy: run %s' % cmd)
         subprocess.run(cmd, check=False)
         cmd = ['helm3', 'uninstall', '%s-openmessaging-benchmarking' % namespace]
         subprocess.run(cmd, check=False)
