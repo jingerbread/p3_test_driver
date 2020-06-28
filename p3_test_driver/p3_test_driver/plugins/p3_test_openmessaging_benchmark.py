@@ -101,18 +101,25 @@ class OpenMessagingBenchmarkK8sTest(BaseTest):
         image = self.test_config['image']
         namespace = self.test_config['namespace']
         ombHelmPath = self.test_config['ombHelmPath']
+        undeploy = self.test_config['undeploy']
+        build = self.test_config['build']
+
         if ombHelmPath is None:
             ombHelmPath = '../deployment/kubernetes/helm/benchmark'
 
         # TODO: remove
         print('ombHelmPath: %s' % ombHelmPath)
         print('image: %s' % image)
+        print('undeploy: %s' % undeploy)
+        print('build: %s' % build)
 
         if self.test_config['build']:
             self.undeploy(wait=False)
             self.build()
-        if self.test_config['build'] or self.test_config['undeploy']:
-            self.undeploy(wait=True)
+        else:
+            if self.test_config['undeploy']:
+                self.undeploy(wait=True)
+
         cmd = [
             'helm3', 'upgrade', '--install', '--timeout', '3m', '--wait', '--debug',
             '%s-openmessaging-benchmarking' % namespace,
