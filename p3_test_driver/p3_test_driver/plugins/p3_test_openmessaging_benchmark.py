@@ -349,6 +349,7 @@ class OpenMessagingBenchmarkSSHTest(BaseTest):
             logging.info("ansible_vars=%s" % str(rec['ansible_vars']))
 
     def run_test(self):
+        print("run_test OpenMessagingBenchmarkSSHTest")
         rec = self.test_config
         test_uuid = rec['test_uuid']
         driver = rec['driver']
