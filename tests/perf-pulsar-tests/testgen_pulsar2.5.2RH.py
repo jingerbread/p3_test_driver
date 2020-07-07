@@ -72,14 +72,14 @@ ombHelmPath = '../deployment/kubernetes/helm/pulsar-benchmark'
 image = 'devops-repo.isus.emc.com:8116/maria/omb:tier2.5.2-1c40f1e-07.07.2020'
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
-
+'''
 # Message size 10k 16 partitionsPerTopic 14 tests
 for repeat in range(1):
     for producerWorkers in [2]:
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
             for messageSize in [10000]:
-                for producerRateEventsPerSec in [7e4, 1e2, 48e3, 5e2, 1e3, 6e4, 1e4, 5e4, 6e3, 3e3, 5e3, 55e3, 9e3, 4e4, 15e3, 3e4, 25e3, 35e3, 2e4]:
+                for producerRateEventsPerSec in [1e2, 48e3, 5e2, 1e3, 1e4, 6e3, 3e3, 5e3, 9e3, 15e3, 3e4, 25e3, 35e3, 2e4]:
                     for topics in [4]:
                         for partitionsPerTopic in [16]:
                             for producersPerWorker in [2]:
@@ -95,7 +95,7 @@ for repeat in range(1):
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
             for messageSize in [10000]:
-                for producerRateEventsPerSec in [7e4, 1e2, 48e3, 5e2, 1e3, 6e4, 1e4, 5e4, 6e3, 3e3, 5e3, 55e3, 9e3, 4e4, 15e3, 3e4, 25e3, 35e3, 2e4]:
+                for producerRateEventsPerSec in [1e2, 48e3, 5e2, 1e3, 1e4, 6e3, 3e3, 5e3, 9e3, 15e3, 3e4, 25e3, 35e3, 2e4]:
                     for topics in [4]:
                         for partitionsPerTopic in [1]:
                             for producersPerWorker in [2]:
@@ -112,7 +112,7 @@ for repeat in range(1):
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
             for messageSize in [100]:
-                for producerRateEventsPerSec in [1e6, 1e2, 5e5, 1e3, 6e5, 1e4, 6e4, 5e3, 5e4]:
+                for producerRateEventsPerSec in [1e6, 1e2, 9e5, 5e5, 1e3, 6e5, 1e4, 6e4, 5e3, 5e4]:
                     for topics in [4]:
                         for partitionsPerTopic in [16]:
                             for producersPerWorker in [2]:
@@ -129,7 +129,7 @@ for repeat in range(1):
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
             for messageSize in [100]:
-                for producerRateEventsPerSec in [1e6, 1e2, 5e5, 1e3, 6e5, 1e4, 6e4, 5e3, 5e4]:
+                for producerRateEventsPerSec in [1e6, 1e2, 9e5, 5e5, 1e3, 6e5, 1e4, 6e4, 5e3, 5e4]:
                     for topics in [4]:
                         for partitionsPerTopic in [1]:
                             for producersPerWorker in [2]:
@@ -139,7 +139,6 @@ for repeat in range(1):
                                         for consumerPerSubscription in [producersPerTopic]:
                                             add_test()
 
-'''
 
 print(json.dumps(test_list, sort_keys=True, indent=4, ensure_ascii=False))
 print('Number of tests generated: %d' % len(test_list), file=sys.stderr)
