@@ -21,7 +21,7 @@ def add_test():
             'persistence': {
                 'ensembleSize': 3,
                 'writeQuorum': 3,
-                'ackQuorum': 3,
+                'ackQuorum': 2,
                 'deduplicationEnabled': True
             },
             'tlsAllowInsecureConnection': False,
@@ -33,8 +33,8 @@ def add_test():
             'batchingMaxPublishDelayMs': 1,
             'blockIfQueueFull': True,
             'pendingQueueSize': 10000
-        }
-
+        },
+        'enableTiering': True
     }
     workload = {
         'messageSize': messageSize,
@@ -69,7 +69,7 @@ localWorker = False
 namespace = 'default'
 ombHelmPath = '../deployment/kubernetes/helm/pulsar-benchmark'
 #image = 'jingerbread/pulsar-omb:dev2.5.2-560d085'
-image = 'devops-repo.isus.emc.com:8116/maria/omb:dev2.5.2-ef40605-24.06.2020'
+image = 'devops-repo.isus.emc.com:8116/maria/omb:tier2.5.2-1c40f1e-07.07.2020'
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
