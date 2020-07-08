@@ -12,7 +12,7 @@ def add_test():
         'driverClass': 'io.openmessaging.benchmark.driver.pravega.PravegaBenchmarkDriver',
         'client': {
             'controllerURI': 'tcp://pravega-pravega-controller:9090',
-            'scopeName': 'examples2',
+            'scopeName': 'p3tests',
         },
         'writer': {
             'enableConnectionPooling': False,
