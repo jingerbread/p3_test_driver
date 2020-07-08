@@ -52,8 +52,8 @@ test_list = []
 localWorker = False
 namespace = 'default'
 ombHelmPath = '../deployment/kubernetes/helm/pulsar-benchmark'
-image = 'devops-repo.isus.emc.com:8116/maria/omb:dev-15b0f5eb9-29.06.2020'
-#image = 'devops-repo.isus.emc.com:8116/maria/omb:dev2.6.0-1c40f1e'
+#image = 'devops-repo.isus.emc.com:8116/maria/omb:dev-15b0f5eb9-29.06.2020'
+image = 'devops-repo.isus.emc.com:8116/maria/omb:dev2.6.0-1c40f1e'
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
@@ -63,7 +63,7 @@ for repeat in range(1):
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
             for messageSize in [10000]:
-                for producerRateEventsPerSec in [1e2, 48e3, 5e2, 1e3, 1e4, 6e3, 3e3, 5e3, 9e3, 15e3, 3e4, 25e3, 35e3, 2e4]:
+                for producerRateEventsPerSec in [1e2, 5e2, 1e3, 1e4, 6e3, 3e3, 5e3, 9e3, 15e3, 3e4, 25e3, 35e3, 2e4]:
                     for topics in [4]:
                         for partitionsPerTopic in [16]:
                             for producersPerWorker in [2]:
@@ -79,7 +79,7 @@ for repeat in range(1):
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
             for messageSize in [10000]:
-                for producerRateEventsPerSec in [1e2, 48e3, 5e2, 1e3, 1e4, 6e3, 3e3, 5e3, 9e3, 15e3, 3e4, 25e3, 35e3, 2e4]:
+                for producerRateEventsPerSec in [1e2, 5e2, 1e3, 1e4, 6e3, 3e3, 5e3, 9e3, 15e3, 3e4, 25e3, 35e3, 2e4]:
                     for topics in [4]:
                         for partitionsPerTopic in [1]:
                             for producersPerWorker in [2]:
