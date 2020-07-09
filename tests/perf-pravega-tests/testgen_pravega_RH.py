@@ -95,7 +95,7 @@ for repeat in range(1):
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
             for messageSize in [100]:
-                for producerRateEventsPerSec in [1e6, 1e2, 9e5, 5e5, 1e3, 6e5, 1e4, 6e4, 5e3, 5e4]:
+                for producerRateEventsPerSec in [1e6, 1e2, 9e5, 5e2, 5e5, 1e3, 6e5, 1e4, 6e4, 5e3, 5e4]:
                     for topics in [4]:
                         for partitionsPerTopic in [16]:
                             for producersPerWorker in [2]:
@@ -111,7 +111,7 @@ for repeat in range(1):
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
             for messageSize in [100]:
-                for producerRateEventsPerSec in [1e6, 1e2, 9e5, 5e5, 1e3, 6e5, 1e4, 6e4, 5e3, 5e4]:
+                for producerRateEventsPerSec in [1e6, 1e2, 9e5, 5e2, 5e5, 1e3, 6e5, 1e4, 6e4, 5e3, 5e4]:
                     for topics in [4]:
                         for partitionsPerTopic in [1]:
                             for producersPerWorker in [2]:
