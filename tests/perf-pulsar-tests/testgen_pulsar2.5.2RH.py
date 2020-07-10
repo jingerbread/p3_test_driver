@@ -72,23 +72,7 @@ image = 'devops-repo.isus.emc.com:8116/maria/omb:tier2.5.2-1c40f1e-07.07.2020'
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
 
-# Message size 10k 16 partitionsPerTopic 14 tests
-for repeat in range(1):
-    for producerWorkers in [2]:
-        numWorkers = 0 if localWorker else producerWorkers*2
-        for testDurationMinutes in [2]:
-            for messageSize in [10000]:
-                for producerRateEventsPerSec in [1e2, 5e2, 1e3, 1e4, 6e3, 3e3, 5e3, 9e3, 15e3, 3e4, 25e3, 35e3, 2e4]:
-                    for topics in [4]:
-                        for partitionsPerTopic in [16]:
-                            for producersPerWorker in [2]:
-                                producersPerTopic = int(producersPerWorker * producerWorkers)
-                                for consumerBacklogSizeGB in [0]:
-                                    for subscriptionsPerTopic in [1]:
-                                        for consumerPerSubscription in [producersPerTopic]:
-                                            add_test()
-
-# Message size 10k 1 partitionsPerTopic 14 tests
+# Message size 10k 1 partitionsPerTopic 13 tests
 for repeat in range(1):
     for producerWorkers in [2]:
         numWorkers = 0 if localWorker else producerWorkers*2
@@ -104,8 +88,40 @@ for repeat in range(1):
                                         for consumerPerSubscription in [producersPerTopic]:
                                             add_test()
 
+# Message size 100 B 1 partitionsPerTopic 10 tests
+for repeat in range(1):
+    for producerWorkers in [2]:
+        numWorkers = 0 if localWorker else producerWorkers*2
+        for testDurationMinutes in [2]:
+            for messageSize in [100]:
+                for producerRateEventsPerSec in [1e6, 1e2, 9e5, 5e5, 1e3, 6e5, 1e4, 6e4, 5e3, 5e4]:
+                    for topics in [4]:
+                        for partitionsPerTopic in [1]:
+                            for producersPerWorker in [2]:
+                                producersPerTopic = int(producersPerWorker * producerWorkers)
+                                for consumerBacklogSizeGB in [0]:
+                                    for subscriptionsPerTopic in [1]:
+                                        for consumerPerSubscription in [producersPerTopic]:
+                                            add_test()
 
-# Message size 100 B 16 partitionsPerTopic 9 tests
+# Message size 10k 16 partitionsPerTopic 13 tests
+for repeat in range(1):
+    for producerWorkers in [2]:
+        numWorkers = 0 if localWorker else producerWorkers*2
+        for testDurationMinutes in [2]:
+            for messageSize in [10000]:
+                for producerRateEventsPerSec in [1e2, 5e2, 1e3, 1e4, 6e3, 3e3, 5e3, 9e3, 15e3, 3e4, 25e3, 35e3, 2e4]:
+                    for topics in [4]:
+                        for partitionsPerTopic in [16]:
+                            for producersPerWorker in [2]:
+                                producersPerTopic = int(producersPerWorker * producerWorkers)
+                                for consumerBacklogSizeGB in [0]:
+                                    for subscriptionsPerTopic in [1]:
+                                        for consumerPerSubscription in [producersPerTopic]:
+                                            add_test()
+
+
+# Message size 100 B 16 partitionsPerTopic 10 tests
 for repeat in range(1):
     for producerWorkers in [2]:
         numWorkers = 0 if localWorker else producerWorkers*2
@@ -121,22 +137,6 @@ for repeat in range(1):
                                         for consumerPerSubscription in [producersPerTopic]:
                                             add_test()
 
-
-# Message size 100 B 1 partitionsPerTopic 9 tests
-for repeat in range(1):
-    for producerWorkers in [2]:
-        numWorkers = 0 if localWorker else producerWorkers*2
-        for testDurationMinutes in [2]:
-            for messageSize in [100]:
-                for producerRateEventsPerSec in [1e6, 1e2, 9e5, 5e5, 1e3, 6e5, 1e4, 6e4, 5e3, 5e4]:
-                    for topics in [4]:
-                        for partitionsPerTopic in [1]:
-                            for producersPerWorker in [2]:
-                                producersPerTopic = int(producersPerWorker * producerWorkers)
-                                for consumerBacklogSizeGB in [0]:
-                                    for subscriptionsPerTopic in [1]:
-                                        for consumerPerSubscription in [producersPerTopic]:
-                                            add_test()
 
 
 print(json.dumps(test_list, sort_keys=True, indent=4, ensure_ascii=False))
