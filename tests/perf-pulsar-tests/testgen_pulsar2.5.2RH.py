@@ -16,7 +16,7 @@ def add_test():
             'ioThreads': 8,
             'connectionsPerBroker': 8,
             'clusterName': 'pulsar',
-            'namespacePrefix': 'benchmark/10k16p1pns',
+            'namespacePrefix': 'benchmark/p3tests',
             'topicType': 'persistent',
             'persistence': {
                 'ensembleSize': 3,
@@ -34,7 +34,7 @@ def add_test():
             'blockIfQueueFull': True,
             'pendingQueueSize': 10000
         },
-        'enableTiering': True
+        'enableTiering': False
     }
     workload = {
         'messageSize': messageSize,
@@ -68,7 +68,6 @@ test_list = []
 localWorker = False
 namespace = 'default'
 ombHelmPath = '../deployment/kubernetes/helm/pulsar-benchmark'
-#image = 'jingerbread/pulsar-omb:dev2.5.2-560d085'
 image = 'devops-repo.isus.emc.com:8116/maria/omb:tier2.5.2-1c40f1e-07.07.2020'
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
@@ -79,7 +78,7 @@ for repeat in range(1):
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
             for messageSize in [10000]:
-                for producerRateEventsPerSec in [1e2, 48e3, 5e2, 1e3, 1e4, 6e3, 3e3, 5e3, 9e3, 15e3, 3e4, 25e3, 35e3, 2e4]:
+                for producerRateEventsPerSec in [1e2, 5e2, 1e3, 1e4, 6e3, 3e3, 5e3, 9e3, 15e3, 3e4, 25e3, 35e3, 2e4]:
                     for topics in [4]:
                         for partitionsPerTopic in [16]:
                             for producersPerWorker in [2]:
@@ -95,7 +94,7 @@ for repeat in range(1):
         numWorkers = 0 if localWorker else producerWorkers*2
         for testDurationMinutes in [2]:
             for messageSize in [10000]:
-                for producerRateEventsPerSec in [1e2, 48e3, 5e2, 1e3, 1e4, 6e3, 3e3, 5e3, 9e3, 15e3, 3e4, 25e3, 35e3, 2e4]:
+                for producerRateEventsPerSec in [1e2, 5e2, 1e3, 1e4, 6e3, 3e3, 5e3, 9e3, 15e3, 3e4, 25e3, 35e3, 2e4]:
                     for topics in [4]:
                         for partitionsPerTopic in [1]:
                             for producersPerWorker in [2]:
