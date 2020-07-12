@@ -68,10 +68,10 @@ test_list = []
 localWorker = False
 namespace = 'default'
 ombHelmPath = '../deployment/kubernetes/helm/pulsar-benchmark'
-image = 'devops-repo.isus.emc.com:8116/maria/omb:tier2.5.2-1c40f1e-07.07.2020'
+image = 'devops-repo.isus.emc.com:8116/maria/omb:dev2.5.2-2b28b32'
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
-'''
+
 # Message size 10k 1 partitionsPerTopic 13 tests
 for repeat in range(1):
     for producerWorkers in [2]:
@@ -103,7 +103,7 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [producersPerTopic]:
                                             add_test()
-'''
+
 # Message size 10k 16 partitionsPerTopic 13 tests
 for repeat in range(1):
     for producerWorkers in [2]:
@@ -120,7 +120,7 @@ for repeat in range(1):
                                         for consumerPerSubscription in [producersPerTopic]:
                                             add_test()
 
-'''
+
 # Message size 100 B 16 partitionsPerTopic 10 tests
 for repeat in range(1):
     for producerWorkers in [2]:
@@ -136,7 +136,7 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [producersPerTopic]:
                                             add_test()
-
+'''
 
 
 print(json.dumps(test_list, sort_keys=True, indent=4, ensure_ascii=False))
