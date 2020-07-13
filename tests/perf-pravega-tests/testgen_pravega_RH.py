@@ -71,7 +71,7 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [producersPerTopic]:
                                             add_test()
-'''
+
 # Message size 10k 1 partitionsPerTopic 16 tests
 for repeat in range(1):
     for producerWorkers in [2]:
@@ -119,7 +119,7 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [producersPerTopic]:
                                                 add_test()
-'''
+
 
 
 print(json.dumps(test_list, sort_keys=True, indent=4, ensure_ascii=False))
