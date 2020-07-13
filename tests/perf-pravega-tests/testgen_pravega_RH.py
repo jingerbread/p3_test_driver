@@ -55,7 +55,7 @@ ombHelmPath = '../deployment/kubernetes/helm/pulsar-benchmark'
 image = 'devops-repo.isus.emc.com:8116/maria/omb:dev2.5.2-2b28b32'
 tarball = '../package/target/openmessaging-benchmark-0.0.1-SNAPSHOT-bin.tar.gz'
 build = False
-
+'''
 # Message size 10k 16 partitionsPerTopic 16 tests
 for repeat in range(1):
     for producerWorkers in [2]:
@@ -87,7 +87,7 @@ for repeat in range(1):
                                     for subscriptionsPerTopic in [1]:
                                         for consumerPerSubscription in [producersPerTopic]:
                                             add_test()
-
+'''
 # Message size 100 B 16 partitionsPerTopic 9 tests
 for repeat in range(1):
     for producerWorkers in [2]:
